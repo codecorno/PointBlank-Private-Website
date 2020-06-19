@@ -27,34 +27,39 @@
 					<span class="login100-form-title p-b-59">
 						Registre-se
 					</span>
-					<p style="color:red;font-size:16px;"><span id="error-code"></span></p>
+					<p style="color:red;font-size:16px;"><span id="status-code"></span></p>
 
-					<div class="wrap-input100 validate-input" data-validate="Insira um email válido: ex@abc.xyz">
+					<div class="wrap-input100 validate-input" data-validate="Insira um email válido: email@email.com">
 						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="email" placeholder="Endereço de Email...">
+						<input class="input100" type="text" id="email" name="email" placeholder="Endereço de Email...">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Insira um usuário">
 						<span class="label-input100">Usuário</span>
-						<input class="input100" type="text" name="username" placeholder="Usuário...">
+						<input class="input100" type="text" id="txtUsername" name="txtUsername" placeholder="Usuário...">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Insira uma senha">
 						<span class="label-input100">Senha</span>
-						<input class="input100" type="password" name="password" placeholder="Senha">
+						<input class="input100" type="password" id="txtPassword" name="txtPassword" placeholder="Senha">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Repita sua senha">
 						<span class="label-input100">Confirme a senha</span>
-						<input class="input100" type="password" name="password_again" placeholder="Confirme sua senha">
+						<input class="input100" type="password" id="txtConPassword" name="txtConPassword" placeholder="Confirme sua senha">
 						<span class="focus-input100"></span>
 					</div>
-					<input type="hidden" name="process" value="reg">
+					<div class="wrap-input100 validate-input" data-validate="Repita sua senha">
+						<span class="label-input100">Forneça o código a seguir</span>
+						<img style="float:right" src="../captcha.php" id="captcha" /><br/>
+						<input class="input100" type="password" id="captchaInput" name="captchaInput" autocomplete="off" placeholder="Captcha"> 
+						<span class="focus-input100"></span>
+					</div>
 					<div class="flex-m w-full p-b-33">
 						<div class="contact100-form-checkbox">
 							<span class="txt1">
 								Ao clicar em "Registrar" você aceita nossos
-								<a href="https://warface.cheaters.pro/terms" class="txt2 hov1">
+								<a href="#" class="txt2 hov1">
 									Termos de uso.
 								</a>
 							</span>
@@ -64,7 +69,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" type="submit">
+							<button class="login100-form-btn" id="submitButton" type="button" onclick="signupUser()">
 								Registrar
 							</button>
 						</div>
@@ -77,7 +82,68 @@
 			</div>
 		</div>
 	</div>
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript"> 
+
+        function signupUser() {
+            var email = document.getElementById("email").value;
+            var Username = document.getElementById("txtUsername").value;
+            var Password = document.getElementById("txtPassword").value;
+            var captcha = document.getElementById("captchaInput").value;
+			var txtConPassword = document.getElementById("txtConPassword").value;
+            $.ajax({
+                type: 'POST',
+                url: 'save_register.php',
+                data: {
+                    'email': email,
+                    'txtUsername': Username,
+                    'txtPassword': Password,
+                    'captcha': captcha,
+					'txtConPassword': txtConPassword,
+                },
+                beforeSend: function() {
+                    $('.submitButton').hide();
+                    $('#status-code').html("<b style='color:gold'>Processando seu registro</b>");
+                },
+                success: function(data) {
+                    $('#login_wait').html(data);
+                    if (data == "Sucesso") {
+                        $('#status-code').html("<p style='color:green'>Cadastrado com sucesso</p>");
+                        setTimeout(' window.location.href = "../"; ', 2000);
+                    }
+					if (data == "Vazio") {
+						$('#status-code').html("Complete todos os campos!");
+                        $('.submitButton').show();
+                    }
+					if (data == "Diferentes") {
+						$('#status-code').html("As senhas não são iguais!");
+                        $('.submitButton').show();
+                    }
+					if (data == "Captcha") {
+						$('#status-code').html("Captcha incorreto!");
+                        $('.submitButton').show();
+                    }
+					if (data == "EmailUso") {
+						$('#status-code').html("Email em uso!");
+                        $('.submitButton').show();
+                    }
+					if (data == "UserUso") {
+						$('#status-code').html("Usuário em uso!");
+                        $('.submitButton').show();
+                    }
+                },
+                error: function(err) {
+                    alert(err);
+
+                }
+            });
+        }
+        $('#submitButton').click(function() {
+            signupUser();
+        });
+
+       
+    </script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>

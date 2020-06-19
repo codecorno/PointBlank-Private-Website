@@ -37,46 +37,46 @@ $num_rows2 = pg_num_rows($result3);
 $redrirac = "../index.php";
 
 	if(trim($_POST["txtUsername"]) == ""){
-		echo("<script> alert('Complete todos os campos!');</script><script>window.location='".$redrirac."';</script>");
+		echo("Vazio");
 		exit();	
 	}elseif(trim($_POST["txtPassword"]) == ""){
-		echo("<script> alert('Complete todos os campos!');</script><script>window.location='".$redrirac."';</script>");
+		echo("Vazio");
 		exit();	
 	}elseif(trim($_POST["txtConPassword"]) == ""){
-		echo("<script> alert('Complete todos os campos!');</script><script>window.location='".$redrirac."';</script>");
+		echo("Vazio");
 		exit();	
 	}elseif(trim($_POST["email"]) == ""){
-		echo("<script> alert('Complete todos os campos!');</script><script>window.location='".$redrirac."';</script>");
+		echo("Vazio");
 		exit();	
 	}elseif(trim($_POST["captcha"]) == ""){
-		echo("<script> alert('Complete todos os campos!');</script><script>window.location='".$redrirac."';</script>");
+		echo("Vazio");
 		exit();	
 	}elseif($_POST["txtPassword"] != $_POST["txtConPassword"]){
-		echo("<script> alert('As senhas nao combinam!');</script><script>window.location='".$redrirac."';</script>");
+		echo("Diferentes");
 		exit();	
 	}elseif (trim($_POST['captcha']) != $_SESSION['cap_code']){
-		echo "<script>alert('O Captcha esta Errado.');</script><script>window.location='".$redrirac."';</script>";
+		echo ("Captcha");
 		exit();
 	}else{
 		$strSQL5 = "SELECT * FROM accounts WHERE email = '".trim($_POST["email"])."' ";// Verifica email
 		$objQuery5 = pg_query($strSQL5);
 		$objResult5 = pg_fetch_array($objQuery5);
 		if($objResult5){
-			echo("<script> alert('Este e-mail já está em uso!');</script><script>window.location='".$redrirac."';</script>");
+			echo("EmailUso");
 			exit();
 		}else{
 			$strSQL = "SELECT * FROM accounts WHERE login = '".trim($_POST['txtUsername'])."' "; // Verifica  ID
 			$objQuery = pg_query($strSQL);
 			$objResult = pg_fetch_array($objQuery);
 			if($objResult){
-				echo("<script> alert('Este usuario já está em uso!');</script><script>window.location='".$redrirac."';</script>");
+				echo("UserUso");
 				exit();
 			}else{	
 				$strSQL = "INSERT INTO accounts (login,password,player_id,email,gp,money,token,cad_ip) VALUES ('".$_POST["txtUsername"]."','".encripitar($_POST["txtPassword"])."','".$_SESSION['id']."','".$_POST["email"]."',100000,100000,'".encripitar($_POST["txtUsername"])."','".$ip."')";   //Alterar Cash e Gold inicial //Change cash and gold
 				$objQuery = pg_query($strSQL);
 		
 				$_SESSION['username'] = $_POST['txtUsername'];
-				echo "<script>alert('Conta criada com sucesso.');</script><script>window.location='../index.php';</script>";
+				echo "Sucesso";
 			}
 		}
 	
