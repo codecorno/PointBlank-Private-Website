@@ -32,17 +32,7 @@ if (isset($_SESSION['usernames'])) {
 
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="login100-more" style="background-image: url('../../img/bg_login_top.jpg');background-position-y:0px;">
-				<div class="registerCenterBox">
-					
-					<ul style="font-size: 22px;">&nbsp Tenha as melhores vantagens jogando em nosso servidor:
-						<li>• 100.000 de Cash e Gold logo no início</li>
-						<li>• Servidor estável e sem bugs</li>
-						<li>• Proteção contra trapaceiros</li>
-						<li> e Muito mais!</li>
-					</ul>
-				</div>
-			</div>
+			<div class="login100-more" style="background-image: url('../../img/bg_login_top.jpg');background-position-y:0px;"></div>
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<form class="login100-form validate-form" method="POST" action="../process/">
