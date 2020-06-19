@@ -173,27 +173,6 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
 
-.registerCenterBox{
-
-  background-color: rgb(255, 255, 255);
-  margin: auto;
-  width: 33%;
-  border: 3px solid rgb(255, 255, 255);
-  border-radius: 20px;
-  margin-top: 20%;
-
-
-}
-.registerCenterBox li,ul{
-
-  font-family: Poppins-Regular;
-  font-size: 16px;
-  display: block;
-  line-height: 1.4;
-  font-size: 22px;
-  text-align: center;
-
-}
 
 .limiter {
   width: 100%;
