@@ -27,7 +27,7 @@
 					<span class="login100-form-title p-b-59">
 						Registre-se
 					</span>
-					<p style="color:red;font-size:16px;"><span id="status-code"></span></p>
+					<p style="color:red;font-size:22px;"><span id="status-code"></span></p>
 
 					<div class="wrap-input100 validate-input" data-validate="Insira um email válido: email@email.com">
 						<span class="label-input100">Email</span>
@@ -52,7 +52,7 @@
 					<div class="wrap-input100 validate-input" data-validate="Repita sua senha">
 						<span class="label-input100">Forneça o código a seguir</span>
 						<img style="float:right" src="../captcha.php" id="captcha" /><br/>
-						<input class="input100" type="password" id="captchaInput" name="captchaInput" autocomplete="off" placeholder="Captcha"> 
+						<input class="input100" type="text" id="captchaInput" name="captchaInput" autocomplete="off" placeholder="Captcha"> 
 						<span class="focus-input100"></span>
 					</div>
 					<div class="flex-m w-full p-b-33">
