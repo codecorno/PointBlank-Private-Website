@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <option option_id="acpSearchExclude" edit_format="callback" data_type="array" validation_class="XF\Option\AcpSearchExclude" validation_method="verifyOption">
+    <default_value>[]</default_value>
+    <edit_format_params>XF\Option\AcpSearchExclude::renderCheckbox</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="acp" display_order="10100"/>
+  </option>
+  <option option_id="addBanUserGroup" edit_format="callback" data_type="integer">
+    <default_value>0</default_value>
+    <edit_format_params>XF\Option\UserGroup::renderSelect</edit_format_params>
+    <relation group_id="discourager" display_order="410"/>
+  </option>
+  <option option_id="adminRequireTfa" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="acp" display_order="300"/>
+  </option>
+  <option option_id="adsDisallowedTemplates" edit_format="textbox" data_type="string" validation_class="XF\Option\AdsDisallowedTemplates" validation_method="verifyOption">
+    <default_value>error
+login
+login_password_confirm
+login_two_step
+message_page
+register_complete
+register_connected_account
+register_confirm
+register_form</default_value>
+    <edit_format_params>rows=3</edit_format_params>
+    <relation group_id="appearance" display_order="300"/>
+  </option>
+  <option option_id="akismetKey" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <relation group_id="spam" display_order="150"/>
+  </option>
+  <option option_id="alertExpiryDays" edit_format="spinbox" data_type="positive_integer">
+    <default_value>4</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_days') }}</edit_format_params>
+    <relation group_id="alerts" display_order="20"/>
+  </option>
+  <option option_id="alertsPerPage" edit_format="spinbox" data_type="positive_integer">
+    <default_value>30</default_value>
+    <edit_format_params>min=1</edit_format_params>
+    <relation group_id="alerts" display_order="30"/>
+  </option>
+  <option option_id="alertsPopupExpiryHours" edit_format="spinbox" data_type="positive_integer">
+    <default_value>3</default_value>
+    <edit_format_params>min=1
+units={{ phrase('units_hours') }}</edit_format_params>
+    <relation group_id="alerts" display_order="210"/>
+  </option>
+  <option option_id="allowVideoUploads" edit_format="callback" data_type="array" validation_class="XF\Option\AllowVideoUploads" validation_method="verifyOption">
+    <default_value>{"enabled":"0","size":"1024"}</default_value>
+    <edit_format_params>XF\Option\AllowVideoUploads::renderOption</edit_format_params>
+    <sub_options>enabled
+size</sub_options>
+    <relation group_id="attachments" display_order="20"/>
+  </option>
+  <option option_id="allowedCodeLanguages" edit_format="textbox" data_type="string">
+    <default_value>apacheconf
+applescript
+aspnet
+bash
+c
+clike
+coffeescript
+cpp
+csharp
+css
+diff
+git
+html
+http
+ini
+java
+javascript
+json
+jsx
+less
+makefile
+markdown
+nginx
+objectivec
+perl
+php
+python
+ruby
+sass
+scss
+sql
+svg
+swift
+wiki
+xml
+yaml</default_value>
+    <edit_format_params>rows=5</edit_format_params>
+    <relation group_id="messageOptions" display_order="810"/>
+  </option>
+  <option option_id="approveSharedBannedRejectedIp" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"1","days":"7"}</default_value>
+    <edit_format_params>onoff=enabled
+value=days
+type=spinbox
+min=1
+default=7
+units={{ phrase('units_days') }}</edit_format_params>
+    <sub_options>enabled
+days</sub_options>
+    <relation group_id="spam" display_order="25"/>
+    <relation group_id="usersAndRegistration" display_order="920"/>
+  </option>
+  <option option_id="attachmentExtensions" edit_format="textbox" data_type="string">
+    <default_value>zip
+txt
+pdf
+png
+jpg
+jpeg
+jpe
+gif</default_value>
+    <edit_format_params>rows=6</edit_format_params>
+    <relation group_id="attachments" display_order="40"/>
+  </option>
+  <option option_id="attachmentMaxDimensions" edit_format="template" data_type="array">
+    <default_value>{"width":"","height":""}</default_value>
+    <edit_format_params>option_template_attachmentMaxDimensions</edit_format_params>
+    <sub_options>width
+height</sub_options>
+    <relation group_id="attachments" display_order="110"/>
+  </option>
+  <option option_id="attachmentMaxFileSize" edit_format="callback" data_type="unsigned_integer" validation_class="XF\Option\MaxFilesize" validation_method="verifyOption">
+    <default_value>1024</default_value>
+    <edit_format_params>XF\Option\MaxFilesize::renderOption</edit_format_params>
+    <relation group_id="attachments" display_order="10"/>
+  </option>
+  <option option_id="attachmentMaxPerMessage" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="attachments" display_order="30"/>
+  </option>
+  <option option_id="attachmentThumbnailDimensions" edit_format="spinbox" data_type="positive_integer" validation_class="XF\Option\Style" validation_method="triggerStyleUpdate">
+    <default_value>150</default_value>
+    <edit_format_params>min=25
+units={{ phrase('units_pixels') }}</edit_format_params>
+    <relation group_id="attachments" display_order="120"/>
+  </option>
+  <option option_id="autoEmbedMedia" edit_format="template" data_type="array" validation_class="XF\Option\AutoEmbedMedia" validation_method="verifyOption">
+    <default_value>{"embedType":"1","linkBbCode":"[i][size=2][url={$url}]View: {$url}[\/url][\/size][\/i]"}</default_value>
+    <edit_format_params>option_template_autoEmbedMedia</edit_format_params>
+    <sub_options>embedType
+linkBbCode</sub_options>
+    <relation group_id="mediaEmbedding" display_order="10"/>
+    <relation group_id="messageOptions" display_order="720"/>
+  </option>
+  <option option_id="boardActive" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="boardActive" display_order="1"/>
+  </option>
+  <option option_id="boardDescription" edit_format="textbox" data_type="string">
+    <default_value>Forum software by XenForo</default_value>
+    <relation group_id="basicBoard" display_order="20"/>
+  </option>
+  <option option_id="boardInactiveMessage" edit_format="textbox" data_type="string">
+    <default_value>Sorry, we're currently unavailable. Please check back later.</default_value>
+    <edit_format_params>rows=3</edit_format_params>
+    <relation group_id="boardActive" display_order="1"/>
+  </option>
+  <option option_id="boardTitle" edit_format="textbox" data_type="string">
+    <default_value>XenForo</default_value>
+    <relation group_id="basicBoard" display_order="10"/>
+  </option>
+  <option option_id="boardUrl" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <edit_format_params>type=url</edit_format_params>
+    <relation group_id="basicBoard" display_order="30"/>
+  </option>
+  <option option_id="boardUrlCanonical" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="basicBoard" display_order="31"/>
+  </option>
+  <option option_id="bounceEmailAddress" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <relation group_id="emailOptions" display_order="310"/>
+  </option>
+  <option option_id="captcha" edit_format="template" data_type="string">
+    <default_value>ReCaptcha</default_value>
+    <edit_format_params>option_template_captcha</edit_format_params>
+    <relation group_id="basicBoard" display_order="320"/>
+    <relation group_id="spam" display_order="610"/>
+    <relation group_id="usersAndRegistration" display_order="610"/>
+  </option>
+  <option option_id="categoryOwnPage" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="nodeList" display_order="200"/>
+  </option>
+  <option option_id="censorCharacter" edit_format="textbox" data_type="string">
+    <default_value>*</default_value>
+    <relation group_id="censoringOptions" display_order="10"/>
+  </option>
+  <option option_id="censorWords" edit_format="callback" data_type="array" validation_class="XF\Option\CensorWords" validation_method="verifyOption">
+    <default_value>[]</default_value>
+    <edit_format_params>XF\Option\CensorWords::renderOption</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="censoringOptions" display_order="110"/>
+  </option>
+  <option option_id="changeLogLength" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>60</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_days') }}</edit_format_params>
+    <relation group_id="logging" display_order="10"/>
+  </option>
+  <option option_id="collectServerStats" edit_format="template" data_type="array" validation_class="XF\Option\CollectServerStats" validation_method="verifyOption">
+    <default_value>{"configured":"0","enabled":"0","installation_id":"","last_sent":"0"}</default_value>
+    <edit_format_params>option_template_collectServerStats</edit_format_params>
+    <sub_options>configured
+enabled
+installation_id
+last_sent</sub_options>
+    <relation group_id="stats" display_order="100"/>
+  </option>
+  <option option_id="contactEmailAddress" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <relation group_id="basicBoard" display_order="40"/>
+    <relation group_id="emailOptions" display_order="20"/>
+  </option>
+  <option option_id="contactEmailSenderHeader" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="emailOptions" display_order="25"/>
+  </option>
+  <option option_id="contactUrl" edit_format="template" data_type="array">
+    <default_value>{"type":"default","custom":false,"overlay":false}</default_value>
+    <edit_format_params>option_template_contactUrl</edit_format_params>
+    <sub_options>type
+custom
+overlay</sub_options>
+    <relation group_id="basicBoard" display_order="230"/>
+  </option>
+  <option option_id="conversationPopupExpiryHours" edit_format="spinbox" data_type="positive_integer">
+    <default_value>72</default_value>
+    <edit_format_params>min=1
+units={{ phrase('units_hours') }}</edit_format_params>
+    <relation group_id="alerts" display_order="220"/>
+  </option>
+  <option option_id="convertMarkdownToBbCode" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="messageOptions" display_order="60"/>
+  </option>
+  <option option_id="currentVersionId" edit_format="textbox" data_type="positive_integer">
+    <default_value>1000011</default_value>
+    <relation group_id="debug" display_order="0"/>
+  </option>
+  <option option_id="defaultEmailAddress" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <relation group_id="basicBoard" display_order="35"/>
+    <relation group_id="emailOptions" display_order="10"/>
+  </option>
+  <option option_id="defaultEmailStyleId" edit_format="callback" data_type="unsigned_integer">
+    <default_value>0</default_value>
+    <edit_format_params>XF\Option\Style::renderRadio</edit_format_params>
+    <relation group_id="appearance" display_order="120"/>
+    <relation group_id="emailOptions" display_order="510"/>
+  </option>
+  <option option_id="defaultLanguageId" edit_format="callback" data_type="positive_integer">
+    <default_value>1</default_value>
+    <edit_format_params>XF\Option\Language::renderRadio</edit_format_params>
+    <relation group_id="appearance" display_order="210"/>
+  </option>
+  <option option_id="defaultStyleId" edit_format="callback" data_type="positive_integer">
+    <default_value>1</default_value>
+    <edit_format_params>XF\Option\Style::renderRadio</edit_format_params>
+    <relation group_id="appearance" display_order="110"/>
+  </option>
+  <option option_id="disallowedCustomTitles" edit_format="textbox" data_type="string">
+    <default_value>admin
+moderator</default_value>
+    <edit_format_params>rows=2</edit_format_params>
+    <relation group_id="users" display_order="510"/>
+    <relation group_id="usersAndRegistration" display_order="330"/>
+  </option>
+  <option option_id="discourageBlankChance" edit_format="spinbox" data_type="string">
+    <default_value>15</default_value>
+    <edit_format_params>min=0
+max=100
+units=%</edit_format_params>
+    <relation group_id="discourager" display_order="50"/>
+  </option>
+  <option option_id="discourageDelay" edit_format="template" data_type="array" validation_class="XF\Option\MinMax" validation_method="verifyOption">
+    <default_value>{"min":"5","max":"20"}</default_value>
+    <edit_format_params>template=option_template_minMax
+units={{ phrase('units_seconds') }}</edit_format_params>
+    <sub_options>min
+max</sub_options>
+    <relation group_id="discourager" display_order="10"/>
+  </option>
+  <option option_id="discourageFloodMultiplier" edit_format="spinbox" data_type="positive_integer">
+    <default_value>10</default_value>
+    <edit_format_params>min=1</edit_format_params>
+    <relation group_id="discourager" display_order="60"/>
+  </option>
+  <option option_id="discourageRedirectChance" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>15</default_value>
+    <edit_format_params>min=0
+max=100
+units=%</edit_format_params>
+    <relation group_id="discourager" display_order="210"/>
+  </option>
+  <option option_id="discourageRedirectUrl" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <relation group_id="discourager" display_order="220"/>
+  </option>
+  <option option_id="discourageSearchChance" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>40</default_value>
+    <edit_format_params>min=0
+max=100
+units=%</edit_format_params>
+    <relation group_id="discourager" display_order="110"/>
+  </option>
+  <option option_id="discussionPreview" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="discussionOptions" display_order="30"/>
+  </option>
+  <option option_id="discussionRssContentLength" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>500</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="discussionOptions" display_order="40"/>
+  </option>
+  <option option_id="discussionsPerPage" edit_format="spinbox" data_type="positive_integer">
+    <default_value>20</default_value>
+    <edit_format_params>min=5
+max=100</edit_format_params>
+    <relation group_id="discussionOptions" display_order="10"/>
+  </option>
+  <option option_id="displayVisitorCount" edit_format="radio" data_type="string">
+    <default_value>title_and_icon</default_value>
+    <edit_format_params>={{ phrase('disable') }}
+title_count={{ phrase('title_count') }}
+icon_indicator={{ phrase('icon_indicator') }}
+title_and_icon={{ phrase('title_count_and_icon_indicator') }}</edit_format_params>
+    <relation group_id="alerts" display_order="250"/>
+  </option>
+  <option option_id="dynamicAvatarEnable" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="users" display_order="415"/>
+    <relation group_id="usersAndRegistration" display_order="220"/>
+  </option>
+  <option option_id="editHistory" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"1","length":"60"}</default_value>
+    <edit_format_params>min=0
+onoff=enabled
+value=length
+default=60
+type=spinbox
+units={{ phrase('units_days') }}</edit_format_params>
+    <sub_options>enabled
+length</sub_options>
+    <relation group_id="logging" display_order="110"/>
+  </option>
+  <option option_id="editLogDisplay" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"1","delay":"5"}</default_value>
+    <edit_format_params>onoff=enabled
+value=delay
+type=spinbox
+min=0
+default=5
+units={{ phrase('units_minutes') }}</edit_format_params>
+    <sub_options>enabled
+delay</sub_options>
+    <relation group_id="logging" display_order="100"/>
+  </option>
+  <option option_id="editorDropdownConfig" edit_format="template" data_type="array">
+    <default_value>[]</default_value>
+    <edit_format_params>option_template_uneditable</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="debug" display_order="710"/>
+  </option>
+  <option option_id="editorToolbarConfig" edit_format="template" data_type="array">
+    <default_value>{"toolbarButtons":["clearFormatting","-vs","bold","italic","underline","strikeThrough","-vs","color","fontFamily","fontSize","-vs","insertLink","insertImage","insertVideo","xfSmilie","xfInsert","-vs","align","xfList","insertTable","-vs","undo","redo","-vs","xfDraft","xfBbCode"],"toolbarButtonsMD":["clearFormatting","-vs","bold","italic","underline","strikeThrough","-vs","color","fontFamily","fontSize","-vs","insertLink","insertImage","insertVideo","xfSmilie","xfInsert","-vs","align","xfList","insertTable","-vs","undo","redo","-vs","xfDraft","xfBbCode"],"toolbarButtonsSM":["clearFormatting","-vs","bold","italic","underline","strikeThrough","-vs","color","fontFamily","fontSize","-vs","insertLink","insertImage","insertVideo","xfSmilie","xfInsert","-vs","align","xfList","insertTable","-vs","undo","redo","-vs","xfDraft","xfBbCode"],"toolbarButtonsXS":["clearFormatting","-vs","bold","italic","underline","-vs","color","fontSize","-vs","insertLink","insertImage","insertVideo","xfSmilie","xfInsert","-vs","align","xfList","insertTable","-vs","undo","redo","-vs","xfBbCode"]}</default_value>
+    <edit_format_params>option_template_uneditable</edit_format_params>
+    <sub_options>toolbarButtons
+toolbarButtonsMD
+toolbarButtonsSM
+toolbarButtonsXS</sub_options>
+    <relation group_id="debug" display_order="700"/>
+  </option>
+  <option option_id="emailBounceHandler" edit_format="template" data_type="array">
+    <default_value>{"enabled":false,"type":false,"host":false,"port":false,"username":false,"password":false,"encryption":false}</default_value>
+    <edit_format_params>option_template_automatedEmailHandler</edit_format_params>
+    <sub_options>enabled
+type
+host
+port
+username
+password
+encryption</sub_options>
+    <relation group_id="emailOptions" display_order="320"/>
+  </option>
+  <option option_id="emailConversationIncludeMessage" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="discussionOptions" display_order="520"/>
+    <relation group_id="emailOptions" display_order="420"/>
+  </option>
+  <option option_id="emailFileCheckWarning" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"1","email":""}</default_value>
+    <edit_format_params>onoff=enabled
+value=email</edit_format_params>
+    <sub_options>enabled
+email</sub_options>
+    <relation group_id="acp" display_order="40"/>
+  </option>
+  <option option_id="emailSenderName" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <relation group_id="emailOptions" display_order="110"/>
+  </option>
+  <option option_id="emailShare" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="sharing" display_order="70"/>
+  </option>
+  <option option_id="emailSoftBounceThreshold" edit_format="template" data_type="array">
+    <default_value>{"bounce_total":"3","unique_days":"3","days_between":"5"}</default_value>
+    <edit_format_params>option_template_emailSoftBounceThreshold</edit_format_params>
+    <sub_options>bounce_total
+unique_days
+days_between</sub_options>
+    <relation group_id="emailOptions" display_order="330"/>
+  </option>
+  <option option_id="emailTransport" edit_format="template" data_type="array">
+    <default_value>{"emailTransport":"sendmail","sendmailReturnPath":"1"}</default_value>
+    <edit_format_params>option_template_emailTransport</edit_format_params>
+    <sub_options>emailTransport
+*</sub_options>
+    <relation group_id="emailOptions" display_order="210"/>
+  </option>
+  <option option_id="emailUnsubscribeHandler" edit_format="template" data_type="array">
+    <default_value>{"enabled":false,"type":false,"host":false,"port":false,"username":false,"password":false,"encryption":false}</default_value>
+    <edit_format_params>option_template_automatedEmailHandler</edit_format_params>
+    <sub_options>enabled
+type
+host
+port
+username
+password
+encryption</sub_options>
+    <relation group_id="emailOptions" display_order="321"/>
+  </option>
+  <option option_id="emailWatchedThreadIncludeMessage" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="discussionOptions" display_order="510"/>
+    <relation group_id="emailOptions" display_order="410"/>
+  </option>
+  <option option_id="emojiSource" edit_format="template" data_type="array">
+    <default_value>{"source":"cdn","path":""}</default_value>
+    <edit_format_params>option_template_emojiSource</edit_format_params>
+    <sub_options>source
+path</sub_options>
+    <relation group_id="messageOptions" display_order="220"/>
+  </option>
+  <option option_id="emojiStyle" edit_format="template" data_type="string">
+    <default_value>emojione</default_value>
+    <edit_format_params>option_template_emojiStyle</edit_format_params>
+    <relation group_id="messageOptions" display_order="210"/>
+  </option>
+  <option option_id="enableMemberList" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="users" display_order="100"/>
+  </option>
+  <option option_id="enableNewsFeed" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="newsfeed" display_order="10"/>
+    <relation group_id="performance" display_order="110"/>
+  </option>
+  <option option_id="enableNotices" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="performance" display_order="210"/>
+  </option>
+  <option option_id="enablePush" edit_format="callback" data_type="boolean" validation_class="XF\Option\EnablePush" validation_method="verifyOption">
+    <default_value>0</default_value>
+    <edit_format_params>XF\Option\EnablePush::renderOption</edit_format_params>
+    <relation group_id="alerts" display_order="10"/>
+  </option>
+  <option option_id="enableSearch" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="performance" display_order="10"/>
+    <relation group_id="searchOptions" display_order="10"/>
+  </option>
+  <option option_id="enableTagging" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="tagging" display_order="10"/>
+  </option>
+  <option option_id="enableTrophies" edit_format="template" data_type="boolean" validation_class="\XF\Option\EnableTrophies" validation_method="verifyOption">
+    <default_value>1</default_value>
+    <edit_format_params>option_template_enableTrophies</edit_format_params>
+    <relation group_id="users" display_order="420"/>
+  </option>
+  <option option_id="enableVerp" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="emailOptions" display_order="315"/>
+  </option>
+  <option option_id="extraCaptchaKeys" edit_format="template" data_type="array">
+    <default_value>[]</default_value>
+    <edit_format_params>option_template_uneditable</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="debug" display_order="500"/>
+  </option>
+  <option option_id="facebookLike" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="sharing" display_order="10"/>
+  </option>
+  <option option_id="floodCheckLength" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>30</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_seconds') }}</edit_format_params>
+    <relation group_id="messageOptions" display_order="540"/>
+    <relation group_id="performance" display_order="810"/>
+  </option>
+  <option option_id="floodCheckLengthDiscussion" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>180</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_seconds') }}</edit_format_params>
+    <relation group_id="messageOptions" display_order="550"/>
+    <relation group_id="performance" display_order="820"/>
+  </option>
+  <option option_id="forumsDefaultPage" edit_format="template" data_type="string">
+    <default_value>forums</default_value>
+    <edit_format_params>option_template_forumsDefaultPage</edit_format_params>
+    <relation group_id="basicBoard" display_order="110"/>
+    <relation group_id="nodeList" display_order="100"/>
+  </option>
+  <option option_id="geoLocationUrl" edit_format="textbox" data_type="string">
+    <default_value>https://maps.google.com/maps?q={location}</default_value>
+    <relation group_id="serviceProviders" display_order="210"/>
+  </option>
+  <option option_id="googleAnalyticsAnonymize" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="seo" display_order="220"/>
+    <relation group_id="stats" display_order="20"/>
+  </option>
+  <option option_id="googleAnalyticsWebPropertyId" edit_format="textbox" data_type="string" validation_class="XF\Option\GoogleAnalytics" validation_method="verifyWebPropertyOption">
+    <default_value></default_value>
+    <relation group_id="seo" display_order="210"/>
+    <relation group_id="stats" display_order="10"/>
+  </option>
+  <option option_id="gravatarEnable" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="users" display_order="410"/>
+    <relation group_id="usersAndRegistration" display_order="230"/>
+  </option>
+  <option option_id="guestShowSignatures" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="messageOptions" display_order="130"/>
+    <relation group_id="seo" display_order="110"/>
+  </option>
+  <option option_id="guestTimeZone" edit_format="callback" data_type="string">
+    <default_value>Europe/London</default_value>
+    <edit_format_params>XF\Option\GuestTimeZone::renderOption</edit_format_params>
+    <relation group_id="basicBoard" display_order="310"/>
+    <relation group_id="usersAndRegistration" display_order="240"/>
+  </option>
+  <option option_id="homePageUrl" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <relation group_id="basicBoard" display_order="150"/>
+  </option>
+  <option option_id="imageCacheRefresh" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>0</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_days') }}</edit_format_params>
+    <relation group_id="imageLinkProxy" display_order="130"/>
+  </option>
+  <option option_id="imageCacheTTL" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>7</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_days') }}</edit_format_params>
+    <relation group_id="imageLinkProxy" display_order="120"/>
+  </option>
+  <option option_id="imageLibrary" edit_format="callback" data_type="string" validation_class="XF\Option\ImageLibrary" validation_method="verifyOption">
+    <default_value>gd</default_value>
+    <edit_format_params>XF\Option\ImageLibrary::renderOption</edit_format_params>
+    <relation group_id="attachments" display_order="210"/>
+  </option>
+  <option option_id="imageLinkProxy" edit_format="checkbox" data_type="array">
+    <default_value>{"images":false,"links":false}</default_value>
+    <edit_format_params>images={{ phrase('proxy_images') }}
+links={{ phrase('proxy_links') }}</edit_format_params>
+    <sub_options>images
+links</sub_options>
+    <relation group_id="imageLinkProxy" display_order="1"/>
+    <relation group_id="messageOptions" display_order="620"/>
+  </option>
+  <option option_id="imageLinkProxyKey" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <relation group_id="imageLinkProxy" display_order="110"/>
+  </option>
+  <option option_id="imageLinkProxyLogLength" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>90</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="imageLinkProxy" display_order="160"/>
+    <relation group_id="logging" display_order="310"/>
+  </option>
+  <option option_id="imageLinkProxyReferrer" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"1","length":"60"}</default_value>
+    <edit_format_params>min=0
+onoff=enabled
+value=length
+default=60
+type=spinbox</edit_format_params>
+    <sub_options>enabled
+length</sub_options>
+    <relation group_id="imageLinkProxy" display_order="150"/>
+    <relation group_id="logging" display_order="320"/>
+  </option>
+  <option option_id="imageProxyMaxSize" edit_format="spinbox" data_type="integer">
+    <default_value>5120</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_kb') }}</edit_format_params>
+    <relation group_id="imageLinkProxy" display_order="140"/>
+  </option>
+  <option option_id="includeTitleInUrls" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="seo" display_order="20"/>
+  </option>
+  <option option_id="indexRoute" edit_format="textbox" data_type="string">
+    <default_value>forums/</default_value>
+    <relation group_id="basicBoard" display_order="100"/>
+  </option>
+  <option option_id="ipInfoUrl" edit_format="textbox" data_type="string">
+    <default_value>https://whatismyipaddress.com/ip/{ip}</default_value>
+    <relation group_id="serviceProviders" display_order="110"/>
+    <relation group_id="spam" display_order="520"/>
+  </option>
+  <option option_id="ipLogCleanUp" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"1","delay":"365"}</default_value>
+    <edit_format_params>onoff=enabled
+value=delay
+type=spinbox
+min=1
+default=365
+units={{ phrase('units_days') }}</edit_format_params>
+    <sub_options>enabled
+delay</sub_options>
+    <relation group_id="logging" display_order="210"/>
+  </option>
+  <option option_id="jQuerySource" edit_format="radio" data_type="string">
+    <default_value>local</default_value>
+    <edit_format_params>local={{ phrase('locally_hosted') }}
+google=Google Ajax API CDN
+microsoft=Microsoft CDN
+jquery=jQuery CDN</edit_format_params>
+    <relation group_id="performance" display_order="1000"/>
+    <relation group_id="serviceProviders" display_order="5000"/>
+  </option>
+  <option option_id="jsLastUpdate" edit_format="textbox" data_type="unsigned_integer">
+    <default_value>0</default_value>
+    <relation group_id="debug" display_order="2010"/>
+  </option>
+  <option option_id="lastPageLinks" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>3</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="discussionOptions" display_order="20"/>
+  </option>
+  <option option_id="lightBoxUniversal" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="attachments" display_order="130"/>
+    <relation group_id="messageOptions" display_order="110"/>
+  </option>
+  <option option_id="linkShare" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="sharing" display_order="90"/>
+  </option>
+  <option option_id="loginLimit" edit_format="radio" data_type="string">
+    <default_value>block</default_value>
+    <edit_format_params>captcha={{ phrase('captcha') }}
+block={{ phrase('lock_out') }}</edit_format_params>
+    <relation group_id="users" display_order="630"/>
+  </option>
+  <option option_id="logoLink" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="basicBoard" display_order="160"/>
+  </option>
+  <option option_id="lostPasswordCaptcha" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="users" display_order="620"/>
+  </option>
+  <option option_id="lostPasswordTimeLimit" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>180</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_seconds') }}</edit_format_params>
+    <relation group_id="performance" display_order="820"/>
+    <relation group_id="users" display_order="610"/>
+  </option>
+  <option option_id="maxContentSpamMessages" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>5</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="spam" display_order="110"/>
+  </option>
+  <option option_id="maxContentTags" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>20</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="tagging" display_order="120"/>
+  </option>
+  <option option_id="maxContentTagsPerUser" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="tagging" display_order="130"/>
+  </option>
+  <option option_id="maximumSearchResults" edit_format="spinbox" data_type="positive_integer">
+    <default_value>200</default_value>
+    <edit_format_params>min=20</edit_format_params>
+    <relation group_id="searchOptions" display_order="120"/>
+  </option>
+  <option option_id="membersPerPage" edit_format="spinbox" data_type="positive_integer">
+    <default_value>20</default_value>
+    <edit_format_params>min=5</edit_format_params>
+    <relation group_id="users" display_order="110"/>
+  </option>
+  <option option_id="messageMaxImages" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>20</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="messageOptions" display_order="610"/>
+  </option>
+  <option option_id="messageMaxLength" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10000</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="messageOptions" display_order="510"/>
+  </option>
+  <option option_id="messageMaxMedia" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>5</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="mediaEmbedding" display_order="110"/>
+    <relation group_id="messageOptions" display_order="710"/>
+  </option>
+  <option option_id="messagesPerPage" edit_format="spinbox" data_type="positive_integer">
+    <default_value>20</default_value>
+    <edit_format_params>min=5
+max=100</edit_format_params>
+    <relation group_id="messageOptions" display_order="530"/>
+  </option>
+  <option option_id="moderatorLogLength" edit_format="spinbox" data_type="integer">
+    <default_value>0</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_days') }}</edit_format_params>
+    <relation group_id="logging" display_order="1"/>
+  </option>
+  <option option_id="multiQuote" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="messageOptions" display_order="10"/>
+  </option>
+  <option option_id="newsFeedMaxItems" edit_format="spinbox" data_type="positive_integer">
+    <default_value>15</default_value>
+    <edit_format_params>min=1
+max=50</edit_format_params>
+    <relation group_id="newsfeed" display_order="110"/>
+  </option>
+  <option option_id="newsFeedMessageSnippetLength" edit_format="spinbox" data_type="positive_integer">
+    <default_value>140</default_value>
+    <edit_format_params>min=10
+max=250
+units={{ phrase('units_characters') }}</edit_format_params>
+    <relation group_id="newsfeed" display_order="210"/>
+  </option>
+  <option option_id="oEmbedCacheRefresh" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>0</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_days') }}</edit_format_params>
+    <relation group_id="mediaEmbedding" display_order="220"/>
+  </option>
+  <option option_id="oEmbedCacheTTL" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>7</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_days') }}</edit_format_params>
+    <relation group_id="mediaEmbedding" display_order="210"/>
+  </option>
+  <option option_id="oEmbedLogLength" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>90</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="logging" display_order="410"/>
+    <relation group_id="mediaEmbedding" display_order="230"/>
+  </option>
+  <option option_id="oEmbedRequestReferrer" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"1","length":"60"}</default_value>
+    <edit_format_params>min=0
+onoff=enabled
+value=length
+default=60
+type=spinbox</edit_format_params>
+    <sub_options>enabled
+length</sub_options>
+    <relation group_id="logging" display_order="420"/>
+    <relation group_id="mediaEmbedding" display_order="240"/>
+  </option>
+  <option option_id="onlineStatusTimeout" edit_format="spinbox" data_type="positive_integer">
+    <default_value>15</default_value>
+    <edit_format_params>min=1
+max=60
+units={{ phrase('units_minutes') }}</edit_format_params>
+    <relation group_id="users" display_order="310"/>
+  </option>
+  <option option_id="pinterestShare" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="sharing" display_order="50"/>
+  </option>
+  <option option_id="pollMaximumResponses" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="discussionOptions" display_order="110"/>
+  </option>
+  <option option_id="preventDiscouragedRegistration" edit_format="template" data_type="boolean">
+    <default_value>1</default_value>
+    <edit_format_params>option_template_preventDiscouragedRegistration</edit_format_params>
+    <relation group_id="discourager" display_order="310"/>
+    <relation group_id="usersAndRegistration" display_order="930"/>
+  </option>
+  <option option_id="privacyPolicyForceWhitelist" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <edit_format_params>rows=2</edit_format_params>
+    <relation group_id="basicBoard" display_order="211"/>
+  </option>
+  <option option_id="privacyPolicyLastUpdate" edit_format="textbox" data_type="unsigned_integer">
+    <default_value>0</default_value>
+    <relation group_id="debug" display_order="2100"/>
+  </option>
+  <option option_id="privacyPolicyUrl" edit_format="template" data_type="array">
+    <default_value>{"type":"default","custom":false}</default_value>
+    <edit_format_params>option_template_privacyPolicyUrl</edit_format_params>
+    <sub_options>type
+custom</sub_options>
+    <relation group_id="basicBoard" display_order="210"/>
+  </option>
+  <option option_id="profilePostMaxLength" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>420</default_value>
+    <edit_format_params>min=0</edit_format_params>
+    <relation group_id="messageOptions" display_order="520"/>
+  </option>
+  <option option_id="pushKeysVAPID" edit_format="template" data_type="array" validation_class="XF\Option\EnablePush" validation_method="verifyVapidKeysOption">
+    <default_value>{"publicKey":"","privateKey":""}</default_value>
+    <edit_format_params>option_template_uneditable</edit_format_params>
+    <sub_options>publicKey
+privateKey</sub_options>
+    <relation group_id="debug" display_order="600"/>
+  </option>
+  <option option_id="readMarkingDataLifetime" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>30</default_value>
+    <edit_format_params>min=1
+max=365
+units={{ phrase('units_days') }}</edit_format_params>
+    <relation group_id="discussionOptions" display_order="210"/>
+  </option>
+  <option option_id="redditShare" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="sharing" display_order="40"/>
+  </option>
+  <option option_id="registrationCheckDnsBl" edit_format="template" data_type="array">
+    <default_value>{"check":"1","action":"moderate","projectHoneyPotKey":""}</default_value>
+    <edit_format_params>option_template_registrationCheckDnsBl</edit_format_params>
+    <sub_options>check
+action
+projectHoneyPotKey</sub_options>
+    <relation group_id="spam" display_order="20"/>
+    <relation group_id="usersAndRegistration" display_order="810"/>
+  </option>
+  <option option_id="registrationDefaults" edit_format="template" data_type="array">
+    <default_value>{"visible":"1","activity_visible":"1","content_show_signature":"1","show_dob_date":"1","show_dob_year":"0","receive_admin_email":"0","email_on_conversation":"1","creation_watch_state":"watch_email","interaction_watch_state":"watch_email","allow_view_profile":"everyone","allow_post_profile":"members","allow_receive_news_feed":"everyone","allow_send_personal_conversation":"members","allow_view_identities":"everyone"}</default_value>
+    <edit_format_params>option_template_registrationDefaults</edit_format_params>
+    <sub_options>visible
+activity_visible
+content_show_signature
+show_dob_date
+show_dob_year
+receive_admin_email
+email_on_conversation
+*</sub_options>
+    <relation group_id="usersAndRegistration" display_order="210"/>
+  </option>
+  <option option_id="registrationSetup" edit_format="template" data_type="array">
+    <default_value>{"enabled":"1","emailConfirmation":"1","moderation":false,"requireDob":"0","minimumAge":"13","requireLocation":false,"requireEmailChoice":false}</default_value>
+    <edit_format_params>option_template_registrationSetup</edit_format_params>
+    <sub_options>enabled
+emailConfirmation
+moderation
+requireDob
+minimumAge
+requireLocation
+requireEmailChoice</sub_options>
+    <relation group_id="usersAndRegistration" display_order="10"/>
+  </option>
+  <option option_id="registrationTimer" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_seconds') }}</edit_format_params>
+    <relation group_id="spam" display_order="40"/>
+    <relation group_id="usersAndRegistration" display_order="910"/>
+  </option>
+  <option option_id="registrationWelcome" edit_format="template" data_type="array" validation_class="\XF\Option\RegistrationWelcome" validation_method="verifyOption">
+    <default_value>{"messageEnabled":false,"messageParticipants":false,"messageTitle":false,"messageBody":false,"messageOpenInvite":false,"messageLocked":false,"messageDelete":false,"emailEnabled":false,"emailFromName":false,"emailFromEmail":false,"emailTitle":false,"emailFormat":false,"emailBody":false}</default_value>
+    <edit_format_params>option_template_registrationWelcome</edit_format_params>
+    <sub_options>messageEnabled
+messageParticipants
+messageTitle
+messageBody
+messageOpenInvite
+messageLocked
+messageDelete
+emailEnabled
+emailFromName
+emailFromEmail
+emailTitle
+emailFormat
+emailBody</sub_options>
+    <relation group_id="usersAndRegistration" display_order="110"/>
+  </option>
+  <option option_id="reportIntoForumId" edit_format="callback" data_type="unsigned_integer">
+    <default_value>0</default_value>
+    <edit_format_params>XF\Option\Forum::renderSelect</edit_format_params>
+    <relation group_id="discourager" display_order="520"/>
+  </option>
+  <option option_id="romanizeUrls" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="basicBoard" display_order="420"/>
+  </option>
+  <option option_id="rootBreadcrumb" edit_format="callback" data_type="string">
+    <default_value>home</default_value>
+    <edit_format_params>XF\Option\RootBreadcrumb::renderOptions</edit_format_params>
+    <relation group_id="basicBoard" display_order="110"/>
+  </option>
+  <option option_id="saveDrafts" edit_format="template" data_type="array">
+    <default_value>{"enabled":"1","lifetime":"24","saveFrequency":"60"}</default_value>
+    <edit_format_params>option_template_saveDrafts</edit_format_params>
+    <sub_options>enabled
+lifetime
+saveFrequency</sub_options>
+    <relation group_id="messageOptions" display_order="30"/>
+  </option>
+  <option option_id="searchMinWordLength" edit_format="spinbox" data_type="positive_integer">
+    <default_value>4</default_value>
+    <edit_format_params>min=1</edit_format_params>
+    <relation group_id="searchOptions" display_order="130"/>
+  </option>
+  <option option_id="searchResultsPerPage" edit_format="spinbox" data_type="positive_integer">
+    <default_value>20</default_value>
+    <edit_format_params>min=5
+</edit_format_params>
+    <relation group_id="searchOptions" display_order="110"/>
+  </option>
+  <option option_id="selectQuotable" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="messageOptions" display_order="20"/>
+  </option>
+  <option option_id="sharedIpsCheckLimit" edit_format="spinbox" data_type="positive_integer">
+    <default_value>28</default_value>
+    <edit_format_params>min=1</edit_format_params>
+    <relation group_id="spam" display_order="510"/>
+    <relation group_id="users" display_order="200"/>
+  </option>
+  <option option_id="shortcodeToEmoji" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="messageOptions" display_order="230"/>
+  </option>
+  <option option_id="showEmojiInSmilieMenu" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="messageOptions" display_order="240"/>
+  </option>
+  <option option_id="showFirstCookieNotice" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="basicBoard" display_order="240"/>
+  </option>
+  <option option_id="showMessageOnlineStatus" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="messageOptions" display_order="120"/>
+  </option>
+  <option option_id="sitemapAutoRebuild" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="sitemap" display_order="10"/>
+  </option>
+  <option option_id="sitemapAutoSubmit" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"1","urls":"https:\/\/www.google.com\/webmasters\/tools\/ping?sitemap={$url}\nhttps:\/\/www.bing.com\/ping?sitemap={$url}"}</default_value>
+    <edit_format_params>onoff=enabled
+value=urls
+type=textarea
+rows=3
+default=https://www.google.com/webmasters/tools/ping?sitemap={$url}\nhttps://www.bing.com/ping?sitemap={$url}</edit_format_params>
+    <sub_options>enabled
+urls</sub_options>
+    <relation group_id="sitemap" display_order="20"/>
+  </option>
+  <option option_id="sitemapExclude" edit_format="callback" data_type="array" validation_class="XF\Option\SitemapExclude" validation_method="verifyOption">
+    <default_value>[]</default_value>
+    <edit_format_params>XF\Option\SitemapExclude::renderCheckbox</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="sitemap" display_order="30"/>
+  </option>
+  <option option_id="sitemapExtraUrls" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <edit_format_params>rows=5</edit_format_params>
+    <relation group_id="sitemap" display_order="40"/>
+  </option>
+  <option option_id="spamDefaultOptions" edit_format="checkbox" data_type="array">
+    <default_value>{"ban_user":"1","delete_messages":"1","delete_conversations":"1","action_threads":"1","check_ips":"1"}</default_value>
+    <edit_format_params>action_threads = {{ phrase('move_delete_spammers_threads') }}
+delete_messages = {{ phrase('delete_spammers_messages') }}
+delete_conversations = {{ phrase('delete_conversations_by_spammer') }}
+ban_user = {{ phrase('ban_spammer') }}
+check_ips = {{ phrase('check_spammers_ips') }}</edit_format_params>
+    <sub_options>ban_user
+delete_messages
+delete_conversations
+action_threads
+check_ips</sub_options>
+    <relation group_id="spam" display_order="220"/>
+  </option>
+  <option option_id="spamMessageAction" edit_format="radio" data_type="string">
+    <default_value>soft-delete</default_value>
+    <edit_format_params>delete = {{ phrase('permanently_delete') }}
+soft-delete = {{ phrase('remove_from_public_view') }}</edit_format_params>
+    <relation group_id="spam" display_order="240"/>
+  </option>
+  <option option_id="spamPhrases" edit_format="template" data_type="array">
+    <default_value>{"phrases":"","action":"moderate"}</default_value>
+    <edit_format_params>option_template_spamPhrases</edit_format_params>
+    <sub_options>phrases
+action</sub_options>
+    <relation group_id="spam" display_order="120"/>
+  </option>
+  <option option_id="spamThreadAction" edit_format="callback" data_type="array" validation_class="XF\Option\SpamThreadAction" validation_method="verifyOption">
+    <default_value>{"action":"soft-delete","node_id":"0"}</default_value>
+    <edit_format_params>XF\Option\SpamThreadAction::renderOption</edit_format_params>
+    <sub_options>action
+node_id</sub_options>
+    <relation group_id="spam" display_order="230"/>
+  </option>
+  <option option_id="spamUserCriteria" edit_format="template" data_type="array">
+    <default_value>{"message_count":"30","register_date":"30","reaction_score":"5"}</default_value>
+    <edit_format_params>option_template_spamUserCriteria</edit_format_params>
+    <sub_options>message_count
+register_date
+reaction_score</sub_options>
+    <relation group_id="spam" display_order="210"/>
+  </option>
+  <option option_id="stopForumSpam" edit_format="template" data_type="array">
+    <default_value>{"enabled":"1","denyThreshold":"3","moderateThreshold":"1","frequencyCutOff":"5","lastSeenCutOff":"7","hashEmail":false,"submitRejections":false,"apiKey":false}</default_value>
+    <edit_format_params>option_template_stopForumSpam</edit_format_params>
+    <sub_options>enabled
+denyThreshold
+moderateThreshold
+frequencyCutOff
+lastSeenCutOff
+hashEmail
+submitRejections
+apiKey</sub_options>
+    <relation group_id="spam" display_order="10"/>
+    <relation group_id="usersAndRegistration" display_order="710"/>
+  </option>
+  <option option_id="tagCloud" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"1","count":"100"}</default_value>
+    <edit_format_params>onoff=enabled
+value=count
+type=spinbox
+min=1
+default=100</edit_format_params>
+    <sub_options>enabled
+count</sub_options>
+    <relation group_id="tagging" display_order="200"/>
+  </option>
+  <option option_id="tagCloudMinUses" edit_format="spinbox" data_type="positive_integer">
+    <default_value>1</default_value>
+    <edit_format_params>min=1</edit_format_params>
+    <relation group_id="tagging" display_order="210"/>
+  </option>
+  <option option_id="tagLength" edit_format="template" data_type="array" validation_class="XF\Option\MinMax" validation_method="verifyOption">
+    <default_value>{"min":"3","max":"50"}</default_value>
+    <edit_format_params>template=option_template_minMax
+max=100</edit_format_params>
+    <sub_options>min
+max</sub_options>
+    <relation group_id="tagging" display_order="140"/>
+  </option>
+  <option option_id="tagValidation" edit_format="template" data_type="array">
+    <default_value>{"disallowedWords":"","matchRegex":""}</default_value>
+    <edit_format_params>option_template_tagValidation</edit_format_params>
+    <sub_options>disallowedWords
+matchRegex</sub_options>
+    <relation group_id="tagging" display_order="150"/>
+  </option>
+  <option option_id="templateHistoryLength" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>30</default_value>
+    <edit_format_params>min=0
+units={{ phrase('units_days') }}</edit_format_params>
+    <relation group_id="acp" display_order="200"/>
+  </option>
+  <option option_id="termsLastUpdate" edit_format="textbox" data_type="unsigned_integer">
+    <default_value>0</default_value>
+    <relation group_id="debug" display_order="2110"/>
+  </option>
+  <option option_id="tosForceWhitelist" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <edit_format_params>rows=2</edit_format_params>
+    <relation group_id="basicBoard" display_order="221"/>
+  </option>
+  <option option_id="tosUrl" edit_format="template" data_type="array">
+    <default_value>{"type":"default","custom":false}</default_value>
+    <edit_format_params>option_template_tosUrl</edit_format_params>
+    <sub_options>type
+custom</sub_options>
+    <relation group_id="basicBoard" display_order="220"/>
+  </option>
+  <option option_id="tumblrShare" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="sharing" display_order="60"/>
+  </option>
+  <option option_id="tweet" edit_format="template" data_type="array" validation_class="XF\Option\Twitter" validation_method="verifyTweetOption">
+    <default_value>{"enabled":"1","via":"","related":""}</default_value>
+    <edit_format_params>option_template_tweet</edit_format_params>
+    <sub_options>enabled
+via
+related</sub_options>
+    <relation group_id="sharing" display_order="20"/>
+  </option>
+  <option option_id="unsubscribeEmailAddress" edit_format="textbox" data_type="string">
+    <default_value></default_value>
+    <relation group_id="emailOptions" display_order="311"/>
+  </option>
+  <option option_id="upgradeCheckStableOnly" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="basicBoard" display_order="510"/>
+  </option>
+  <option option_id="urlToPageTitle" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"0","format":"{title}"}</default_value>
+    <edit_format_params>onoff=enabled
+value=format
+type=textbox
+placeholder={{ phrase('enter_page_title_format...') }}</edit_format_params>
+    <sub_options>enabled
+format</sub_options>
+    <relation group_id="messageOptions" display_order="40"/>
+    <relation group_id="seo" display_order="30"/>
+  </option>
+  <option option_id="urlToRichPreview" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="messageOptions" display_order="50"/>
+  </option>
+  <option option_id="useFriendlyUrls" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="basicBoard" display_order="410"/>
+    <relation group_id="seo" display_order="10"/>
+  </option>
+  <option option_id="userBanners" edit_format="template" data_type="array">
+    <default_value>{"showStaff":"1","displayMultiple":"1","hideUserTitle":false,"showStaffAndOther":false}</default_value>
+    <edit_format_params>option_template_userBanners</edit_format_params>
+    <sub_options>showStaff
+displayMultiple
+hideUserTitle
+showStaffAndOther</sub_options>
+    <relation group_id="users" display_order="710"/>
+  </option>
+  <option option_id="userMentionKeepAt" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="alerts" display_order="300"/>
+  </option>
+  <option option_id="userTitleLadderField" edit_format="template" data_type="string">
+    <default_value>trophy_points</default_value>
+    <edit_format_params>option_template_userTitleLadderField</edit_format_params>
+    <relation group_id="users" display_order="420"/>
+  </option>
+  <option option_id="usernameLength" edit_format="template" data_type="array" validation_class="XF\Option\MinMax" validation_method="verifyOption">
+    <default_value>{"min":"3","max":"25"}</default_value>
+    <edit_format_params>template=option_template_minMax
+units={{ phrase('units_characters') }}
+max=50</edit_format_params>
+    <sub_options>min
+max</sub_options>
+    <relation group_id="usersAndRegistration" display_order="310"/>
+  </option>
+  <option option_id="usernameValidation" edit_format="template" data_type="array" validation_class="XF\Option\UsernameValidation" validation_method="verifyOption">
+    <default_value>{"disallowedNames":"","matchRegex":""}</default_value>
+    <edit_format_params>option_template_usernameValidation</edit_format_params>
+    <sub_options>disallowedNames
+matchRegex</sub_options>
+    <relation group_id="usersAndRegistration" display_order="320"/>
+  </option>
+  <option option_id="watchAlertActiveOnly" edit_format="onofftextbox" data_type="array">
+    <default_value>{"enabled":"1","days":"180"}</default_value>
+    <edit_format_params>onoff=enabled
+value=days
+type=spinbox
+min=1
+default=180
+units={{ phrase('units_days') }}</edit_format_params>
+    <sub_options>enabled
+days</sub_options>
+    <relation group_id="emailOptions" display_order="430"/>
+  </option>
+  <option option_id="whatsAppShare" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="sharing" display_order="70"/>
+  </option>
+</options>

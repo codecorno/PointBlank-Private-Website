@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<member_stats>
+  <member_stat member_stat_key="highest_reaction_score" sort_order="reaction_score" sort_direction="desc" show_value="1" user_limit="20" display_order="20" overview_display="1" active="1" cache_lifetime="60"><![CDATA[[]]]></member_stat>
+  <member_stat member_stat_key="most_messages" sort_order="message_count" sort_direction="desc" show_value="1" user_limit="20" display_order="10" overview_display="1" active="1" cache_lifetime="0"><![CDATA[[]]]></member_stat>
+  <member_stat member_stat_key="most_points" sort_order="trophy_points" sort_direction="desc" show_value="1" user_limit="20" display_order="30" overview_display="1" active="1" cache_lifetime="0"><![CDATA[[]]]></member_stat>
+  <member_stat member_stat_key="staff_members" sort_order="username" sort_direction="asc" show_value="0" user_limit="20" display_order="2000" overview_display="1" active="1" cache_lifetime="60"><![CDATA[{"user_group_id":"","no_secondary_group_ids":"0","register_date":{"start":"","end":""},"last_activity":{"start":"","end":""},"message_count":{"start":"0","end":"-1"},"trophy_points":{"start":"0","end":"-1"},"user_state":["valid","email_confirm","email_confirm_edit","email_bounce","moderated"],"is_banned":["0","1"],"Option":{"is_discouraged":["0","1"]},"is_staff":["1"]}]]></member_stat>
+  <member_stat member_stat_key="todays_birthdays" callback_class="XF\MemberStat\Birthdays" callback_method="getBirthdayUsers" sort_order="username" sort_direction="asc" show_value="1" user_limit="20" display_order="1000" overview_display="1" active="1" cache_lifetime="60"><![CDATA[[]]]></member_stat>
+</member_stats>

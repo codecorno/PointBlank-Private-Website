@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<help_pages>
+  <help_page page_id="bb_codes" page_name="bb-codes" display_order="20" callback_class="\XF\Help\BbCodes" callback_method="renderBbCodes" advanced_mode="1" active="1"/>
+  <help_page page_id="cookies" page_name="cookies" display_order="40" advanced_mode="0" active="1"/>
+  <help_page page_id="privacy_policy" page_name="privacy-policy" display_order="60" callback_class="XF\Help\PrivacyPolicy" callback_method="renderPrivacyPolicy" advanced_mode="0" active="1"/>
+  <help_page page_id="smilies" page_name="smilies" display_order="10" callback_class="\XF\Help\Smilies" callback_method="renderSmilies" advanced_mode="1" active="1"/>
+  <help_page page_id="terms" page_name="terms" display_order="50" callback_class="XF\Help\Terms" callback_method="renderTerms" advanced_mode="0" active="1"/>
+  <help_page page_id="trophies" page_name="trophies" display_order="30" callback_class="\XF\Help\Trophies" callback_method="renderTrophies" advanced_mode="1" active="1"/>
+</help_pages>

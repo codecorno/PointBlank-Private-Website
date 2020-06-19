@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget_positions>
+  <widget_position position_id="category_view_sidebar" active="1"/>
+  <widget_position position_id="conversation_list_sidebar" active="1"/>
+  <widget_position position_id="conversation_view_sidebar" active="1"/>
+  <widget_position position_id="find_threads_sidenav" active="1"/>
+  <widget_position position_id="forum_list_above_nodes" active="1"/>
+  <widget_position position_id="forum_list_below_nodes" active="1"/>
+  <widget_position position_id="forum_list_sidebar" active="1"/>
+  <widget_position position_id="forum_new_posts_sidebar" active="1"/>
+  <widget_position position_id="forum_overview_bottom" active="1"/>
+  <widget_position position_id="forum_overview_top" active="1"/>
+  <widget_position position_id="forum_view_sidebar" active="1"/>
+  <widget_position position_id="help_page_sidenav" active="1"/>
+  <widget_position position_id="member_view_sidebar" active="1"/>
+  <widget_position position_id="member_wrapper_sidenav" active="1"/>
+  <widget_position position_id="online_list_sidebar" active="1"/>
+  <widget_position position_id="pub_sidebar_bottom" active="1"/>
+  <widget_position position_id="pub_sidebar_top" active="1"/>
+  <widget_position position_id="thread_view_sidebar" active="1"/>
+  <widget_position position_id="whats_new_overview" active="1"/>
+  <widget_position position_id="whats_new_sidenav" active="1"/>
+</widget_positions>

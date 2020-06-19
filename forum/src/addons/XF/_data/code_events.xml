@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="utf-8"?>
+<code_events>
+  <event event_id="addon_post_install"><![CDATA[<p>Called when the post-install code for an add-on has been run.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\AddOn\AddOn</em> $addOn, <em>\XF\Entity\AddOn</em> $installedAddOn, <em>array</em> $json, <em>array</em> &amp;$stateChanges</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\AddOn\AddOn</em> $addOn</code> - The AddOn object for the add-on being installed.</li>
+	<li><code><em>\XF\Entity\AddOn</em> $installedAddOn</code> - The newly created add-on entity.</li>
+	<li><code><em>array</em> $json</code> - An array decoded from the add-on's addon.json file.</li>
+	<li><code><em>array</em> &amp;$stateChanges</code> - An array for storing state changes such as post-install controller redirects.</li>
+</ol>
+
+<p><b>Event hint:</b> The add-on ID for the add-on being installed.</p>]]></event>
+  <event event_id="addon_post_rebuild"><![CDATA[<p>Called when the post-rebuild code for an add-on has been run.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\AddOn\AddOn</em> $addOn, <em>\XF\Entity\AddOn</em> $installedAddOn, <em>array</em> $json</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\AddOn\AddOn</em> $addOn</code> - The AddOn object for the add-on being rebuilt.</li>
+	<li><code><em>\XF\Entity\AddOn</em> $installedAddOn</code> - The add-on entity.</li>
+	<li><code><em>array</em> $json</code> - An array decoded from the add-on's addon.json file.</li>
+</ol>
+
+<p><b>Event hint:</b> The add-on ID for the add-on being rebuilt.</p>]]></event>
+  <event event_id="addon_post_uninstall"><![CDATA[<p>Called when the post-uninstall code for an add-on has been run. Note that the uninstalled add-on entity is no longer available.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\AddOn\AddOn</em> $addOn, $addOnId, <em>array</em> $json</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\AddOn\AddOn</em> $addOn</code> - The AddOn object for the add-on being uninstalled.</li>
+	<li><code><em>string</em> $addOnId</code> - ID of the now uninstalled add-on.</li>
+	<li><code><em>array</em> $json</code> - An array decoded from the add-on's addon.json file.</li>
+</ol>
+
+<p><b>Event hint:</b> The add-on ID for the add-on being uninstalled.</p>]]></event>
+  <event event_id="addon_post_upgrade"><![CDATA[<p>Called when the post-upgrade code for an add-on has been run.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\AddOn\AddOn</em> $addOn, <em>\XF\Entity\AddOn</em> $installedAddOn, <em>array</em> $json, <em>array</em> &amp;$stateChanges</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\AddOn\AddOn</em> $addOn</code> - The AddOn object for the add-on being upgraded.</li>
+	<li><code><em>\XF\Entity\AddOn</em> $installedAddOn</code> - The existing add-on entity.</li>
+	<li><code><em>array</em> $json</code> - An array decoded from the add-on's addon.json file.</li>
+	<li><code><em>array</em> &amp;$stateChanges</code> - An array for storing state changes such as post-upgrade controller redirects.</li>
+</ol>
+
+<p><b>Event hint:</b> The add-on ID for the add-on being upgraded.</p>]]></event>
+  <event event_id="addon_pre_install"><![CDATA[<p>Called when the pre-install code for an add-on has been run.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\AddOn\AddOn</em> $addOn, <em>\XF\Entity\AddOn</em> $installedAddOn, <em>array</em> $json</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\AddOn\AddOn</em> $addOn</code> - The AddOn object for the add-on being installed.</li>
+	<li><code><em>\XF\Entity\AddOn</em> $installedAddOn</code> - The newly created add-on entity.</li>
+	<li><code><em>array</em> $json</code> - An array decoded from the add-on's addon.json file.</li>
+</ol>
+
+<p><b>Event hint:</b> The add-on ID for the add-on being installed.</p>]]></event>
+  <event event_id="addon_pre_rebuild"><![CDATA[<p>Called when the pre-rebuild code for an add-on has been run.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\AddOn\AddOn</em> $addOn, <em>\XF\Entity\AddOn</em> $installedAddOn, <em>array</em> $json</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\AddOn\AddOn</em> $addOn</code> - The AddOn object for the add-on being rebuilt.</li>
+	<li><code><em>\XF\Entity\AddOn</em> $installedAddOn</code> - The add-on entity.</li>
+	<li><code><em>array</em> $json</code> - An array decoded from the add-on's addon.json file.</li>
+</ol>
+
+<p><b>Event hint:</b> The add-on ID for the add-on being rebuilt.</p>]]></event>
+  <event event_id="addon_pre_uninstall"><![CDATA[<p>Called when the pre-uninstall code for an add-on has been run.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\AddOn\AddOn</em> $addOn, <em>\XF\Entity\AddOn</em> $installedAddOn, <em>array</em> $json</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\AddOn\AddOn</em> $addOn</code> - The AddOn object for the add-on being uninstalled.</li>
+	<li><code><em>\XF\Entity\AddOn</em> $installedAddOn</code> - The add-on entity.</li>
+	<li><code><em>array</em> $json</code> - An array decoded from the add-on's addon.json file.</li>
+</ol>
+
+<p><b>Event hint:</b> The add-on ID for the add-on being uninstalled.</p>]]></event>
+  <event event_id="addon_pre_upgrade"><![CDATA[<p>Called when the pre-upgrade code for an add-on has been run.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\AddOn\AddOn</em> $addOn, <em>\XF\Entity\AddOn</em> $installedAddOn, <em>array</em> $json</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\AddOn\AddOn</em> $addOn</code> - The AddOn object for the add-on being upgraded.</li>
+	<li><code><em>\XF\Entity\AddOn</em> $installedAddOn</code> - The existing add-on entity.</li>
+	<li><code><em>array</em> $json</code> - An array decoded from the add-on's addon.json file.</li>
+</ol>
+
+<p><b>Event hint:</b> The add-on ID for the add-on being upgraded.</p>]]></event>
+  <event event_id="app_admin_complete"><![CDATA[<p>Called after the admin <code>\XF\Admin\App</code> object has finished running, but before the response is filtered and returned.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Admin\App</em> $app, <em>\XF\Http\Response</em> &amp;$response</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Admin\App</em> $app</code> - Admin App object.</li>
+	<li><code><em>\XF\Http\Response</em> &amp;$response</code> - HTTP Response object.</li>
+</ol>]]></event>
+  <event event_id="app_admin_render_page"><![CDATA[<p>Called just before the admin page HTML is rendered.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Admin\App</em> $app, <em>array</em> &amp;$params, <em>\XF\Mvc\Reply\AbstractReply</em> &amp;$reply, <em>\XF\Mvc\Renderer\AbstractRenderer</em> &amp;$renderer</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Admin\App</em> $app</code> - Admin App object.</li>
+	<li><code><em>array</em> &amp;$params</code> - Array of params being passed into the (container) template.</li>
+	<li><code><em>\XF\Mvc\Reply\AbstractReply</em> &amp;$reply</code> - Reply object.</li>
+	<li><code><em>\XF\Mvc\Renderer\AbstractRenderer</em> &amp;$renderer</code> - Renderer object.</li>
+</ol>]]></event>
+  <event event_id="app_admin_setup"><![CDATA[<p>Called after the admin <code>\XF\Admin\App</code> object has been setup.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Admin\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Admin\App</em> $app</code> - Admin App object.</li>
+</ol>]]></event>
+  <event event_id="app_admin_start_begin"><![CDATA[<p>Called at the beginning of the the admin <code>\XF\Admin\App</code> object startup process.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Admin\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Admin\App</em> $app</code> - Admin App object.</li>
+</ol>]]></event>
+  <event event_id="app_admin_start_end"><![CDATA[<p>Called at the end of the the Admin <code>\XF\Admin\App</code> object startup process.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Admin\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Admin\App</em> $app</code> - Admin App object.</li>
+</ol>]]></event>
+  <event event_id="app_api_complete"><![CDATA[<p>Called after the API <code>\XF\Api\App</code> object has finished running, but before the response is filtered and returned.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Api\App</em> $app, <em>\XF\Http\Response</em> &amp;$response</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Api\App</em> $app</code> - API App object.</li>
+	<li><code><em>\XF\Http\Response</em> &amp;$response</code> - HTTP Response object.</li>
+</ol>]]></event>
+  <event event_id="app_api_setup"><![CDATA[<p>Called after the API <code>\XF\Api\App</code> object has been setup.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Api\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Api\App</em> $app</code> - API App object.</li>
+</ol>]]></event>
+  <event event_id="app_api_start_begin"><![CDATA[<p>Called at the beginning of the the API <code>\XF\Api\App</code> object startup process.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Api\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+    <li><code><em>\XF\Api\App</em> $app</code> - API App object.</li>
+</ol>]]></event>
+  <event event_id="app_api_start_end"><![CDATA[<p>Called at the end of the the API <code>\XF\Api\App</code> object startup process.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Api\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+    <li><code><em>\XF\Api\App</em> $app</code> - API App object.</li>
+</ol>]]></event>
+  <event event_id="app_api_validate_request"><![CDATA[<p>Called in the process of starting the <code>\XF\Api\App</code> object, when validating the API request credentials.</p>
+
+<p>To override the default behavior, set <code>$result</code> to a user entity or, if triggering an error, false. If an error is triggered, set <code>$error</code> and <code>$code</code> as appropriate.</code></p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Http\Request</em> $request, &amp;$result, &amp;$error, &amp;$code</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Http\Request</em> $request</code> - API App object.</li>
+	<li><code>$result</code> - if overriding the behavior, set this to a user entity or false.</li>
+	<li><code>$error</code> - if setting the result to false, the phrase key of the error to return.</li>
+	<li><code>$code</code> - if setting the result to false, the HTTP response code to use.</li>
+</ol>]]></event>
+  <event event_id="app_cli_setup"><![CDATA[<p>Called after the CLI <code>\XF\Cli\App</code> object has been setup.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Cli\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Cli\App</em> $app</code> - CLI App object.</li>
+</ol>]]></event>
+  <event event_id="app_cli_start_begin"><![CDATA[<p>Called at the beginning of the the CLI <code>\XF\Cli\App</code> object startup process.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Cli\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Cli\App</em> $app</code> - CLI App object.</li>
+</ol>]]></event>
+  <event event_id="app_cli_start_end"><![CDATA[<p>Called at the end of the the CLI <code>\XF\Cli\App</code> object startup process.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Cli\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Cli\App</em> $app</code> - CLI App object.</li>
+</ol>]]></event>
+  <event event_id="app_complete"><![CDATA[<p>Called after the global <code>\XF\App</code> object has finished running, but before the response is filtered and returned.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\App</em> $app, <em>\XF\Http\Response</em> &amp;$response</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\App</em> $app</code> - Global App object.</li>
+	<li><code><em>\XF\Http\Response</em> &amp;$response</code> - HTTP Response object.</li>
+</ol>]]></event>
+  <event event_id="app_final_output"><![CDATA[<p>Called just before the HTTP response returned.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\App</em> $app, <em>\XF\Http\Response</em> &amp;$response</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\App</em> $app</code> - Global App object.</li>
+	<li><code><em>\XF\Http\Response</em> &amp;$response</code> - HTTP Response object.</li>
+</ol>]]></event>
+  <event event_id="app_pub_complete"><![CDATA[<p>Called after the public <code>\XF\Pub\App</code> object has finished running, but before the response is filtered and returned.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Pub\App</em> $app, <em>\XF\Http\Response</em> &amp;$response</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Pub\App</em> $app</code> - Public App object.</li>
+	<li><code><em>\XF\Http\Response</em> &amp;$response</code> - HTTP Response object.</li>
+</ol>]]></event>
+  <event event_id="app_pub_render_page"><![CDATA[<p>Called just before the public page HTML is rendered.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Pub\App</em> $app, <em>array</em> &amp;$params, <em>\XF\Mvc\Reply\AbstractReply</em> $reply, <em>\XF\Mvc\Renderer\AbstractRenderer</em> $renderer</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Pub\App</em> $app</code> - Public App object.</li>
+	<li><code><em>array</em> &amp;$params</code> - Array of params being passed into the (container) template.</li>
+	<li><code><em>\XF\Mvc\Reply\AbstractReply</em> $reply</code> - Reply object.</li>
+	<li><code><em>\XF\Mvc\Renderer\AbstractRenderer</em> $renderer</code> - Renderer object.</li>
+</ol>]]></event>
+  <event event_id="app_pub_setup"><![CDATA[<p>Called after the public <code>\XF\Pub\App</code> object has been setup.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Pub\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Pub\App</em> $app</code> - Public App object.</li>
+</ol>]]></event>
+  <event event_id="app_pub_start_begin"><![CDATA[<p>Called at the beginning of the the public <code>\XF\Pub\App</code> object startup process.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Pub\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Pub\App</em> $app</code> - Public App object.</li>
+</ol>]]></event>
+  <event event_id="app_pub_start_end"><![CDATA[<p>Called at the end of the the Public <code>\XF\Pub\App</code> object startup process.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Pub\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Pub\App</em> $app</code> - Public App object.</li>
+</ol>]]></event>
+  <event event_id="app_setup"><![CDATA[<p>Called after the global <code>\XF\App</code> object has been setup. This will fire regardless of the application type.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\App</em> $app</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\App</em> $app</code> - Global App object.</li>
+</ol>]]></event>
+  <event event_id="bb_code_processor_action_map"><![CDATA[<p>Called when the BB code processor action map is accessed.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>array</em> &amp;$processorActionMap</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>array</em> &amp;$processorActionMap</code> - The current processor action map.</li>
+</ol>]]></event>
+  <event event_id="bb_code_renderer"><![CDATA[<p>Called when a BB code renderer object is created.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\BbCode\Renderer\AbstractRenderer</em> $renderer, $type</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\BbCode\Renderer\AbstractRenderer</em> $renderer</code> - The renderer object being created.</li>
+	<li><code>$type</code> - A string representing the type of renderer that is being created (such as "html" or "editorHtml").</li>
+</ol>
+
+<p><b>Event hint:</b> The type of renderer being created.</p>]]></event>
+  <event event_id="bb_code_renderer_map"><![CDATA[<p>Called when the BB code renderer map is accessed.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>array</em> &amp;$rendererMap</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>array</em> &amp;$rendererMap</code> - The current renderer map.</li>
+</ol>]]></event>
+  <event event_id="bb_code_rules"><![CDATA[<p>Called when a BB code rule set object is created.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\BbCode\RuleSet</em> $ruleSet, $context, $subContext</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\BbCode\RuleSet</em> $ruleSet</code> - The ruleset object being created.</li>
+	<li><code>$context</code> - A string representing the context of the rule set, usually representing the content type.</li>
+	<li><code>$subContext</code> - A string representing the sub-context of the rule set. This may not always be provided, but can represent a specific situation (such as "rss").</li>
+</ol>
+
+<p><b>Event hint:</b> The context for the rule set (not including the sub-context).</p>]]></event>
+  <event event_id="code_languages"><![CDATA[<p>Allows the modification of the list of supported code languages as defined in <code>XF\Data\CodeLanguage</code>. This allows you to modify the CodeMirror "mode" which is enabled when that language is selected in the code editor, whether it is "common" (so it appears at the top of the list) and which CodeMirror add-ons are enabled when that mode is selected.</p>
+
+<p>Callback signature:</p>
+<blockquote><code>&amp;$languages</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code>&amp;$languages</code> - Array of languages which can be modified.</li>
+</ol>]]></event>
+  <event event_id="controller_post_dispatch"><![CDATA[<p>Called at the end of the <code>postDispatch()</code> method of the main <code>Controller</code> object.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Controller</em> $controller, $action, <em>\XF\Mvc\ParameterBag</em> $params, <em>\XF\Mvc\Reply\AbstractReply</em> &amp;$reply</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Controller</em> $controller</code> - Main controller object.</li>
+	<li><code>$action</code> - Current controller action.</li>
+	<li><code><em>\XF\Mvc\ParameterBag</em> $params</code> - ParameterBag object containing router related params.</li>
+	<li><code><em>\XF\Mvc\Reply\AbstractReply</em> &amp;$reply</code> - Reply object.</li>
+</ol>
+
+<p><b>Event hint:</b> Fully qualified name of the root class that was called.</p>]]></event>
+  <event event_id="controller_pre_dispatch"><![CDATA[<p>Called at the end of the <code>preDispatch()</code> method of the main <code>Controller</code> object.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Controller</em> $controller, $action, <em>\XF\Mvc\ParameterBag</em> $params</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Controller</em> $controller</code> - Main controller object.</li>
+	<li><code>$action</code> - Current controller action.</li>
+	<li><code><em>\XF\Mvc\ParameterBag</em> $params</code> - ParameterBag object containing router related params.</li>
+</ol>
+
+<p><b>Event hint:</b> Fully qualified name of the root class that was called.</p>]]></event>
+  <event event_id="criteria_page"><![CDATA[<p>Called while testing a page against various criteria in \XF\Criteria\Page::isMatch() for notices etc.</p>
+
+<p>Callback signature:</p>
+<blockquote><code>$rule, <em>array</em> $data, <em>\XF\Entity\User</em> $user, <em>array</em> $params, &amp;$returnValue</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>string</em> $rule</code> - text identifying the criteria that should be checked.</li>
+	<li><code><em>array</em> $data</code> - data defining the conditions of the criteria.</li>
+	<li><code><em>\XF\Entity\User</em> $user</code> - user entity object to be used in the criteria checks.</li>
+	<li><code><em>array</em> $params</code> - container and template parameters to use in the criteria checks.</li>
+	<li><code><em>boolean</em> &amp;$returnValue</code> - the event code should set this to <b>true</b> if a criteria check succeeds.</li>
+</ol>
+
+<p>Example:</p>
+<pre>public static function criteriaPage($rule, array $data, \XF\Entity\User $user, array $params, &amp;$returnValue)
+{
+	switch ($rule)
+	{
+		case 'p_field':
+		if ($params['p'] == $data['p_value'])
+		{
+			$returnValue = true;
+		}
+		break;
+		
+		case 'c_check':
+		if ($params['c'] == $data['c'])
+		{
+			$returnValue = true;
+		}
+		break;
+	}
+}</pre>]]></event>
+  <event event_id="criteria_template_data"><![CDATA[<p>Called before rendering the helper_criteria template to allow adding additional view params to the criteria form.</p>
+
+<p>Callback signature:</p>
+<blockquote><code>array &amp;$templateData</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>array</em> &amp;$templateData</code> - the array of data passed to the helper_criteria_template.</li>
+</ol>]]></event>
+  <event event_id="criteria_user"><![CDATA[<p>Called while testing a user against user criteria in \XF\Criteria\User::isMatch() for trophies, notices etc.</p>
+
+<p>Callback signature:</p>
+<blockquote><code>$rule, <em>array</em> $data, <em>\XF\Entity\User</em> $user, &amp;$returnValue</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>string</em> $rule</code> - text identifying the criteria that should be checked.</li>
+	<li><code><em>array</em> $data</code> - data defining the conditions of the criteria.</li>
+	<li><code><em>\XF\Entity\User</em> $user</code> - user entity object to be used in the criteria checks.</li>
+	<li><code><em>boolean</em> &amp;$returnValue</code> - the event code should set this to <b>true</b> if a criteria check matches.</li>
+</ol>
+
+<p>Example:</p>
+<pre>public static function criteriaUser($rule, array $data, \XF\Entity\User $user, &amp;$returnValue)
+{
+	switch ($rule)
+	{
+		case 'foo_field':
+		if ($user['foo_field'] == $data['foo'])
+		{
+			$returnValue = true;
+		}
+		break;
+		
+		case 'bar_field':
+		if ($user['bar_field'] == $data['bar_value'])
+		{
+			$returnValue = true;
+		}
+		break;
+	}
+}</pre>]]></event>
+  <event event_id="dispatcher_match"><![CDATA[<p>Called before the dispatch loop, allows you to modify the \XF\Mvc\RouteMatch object before it is modified.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Dispatcher</em> $dispatcher, <em>\XF\Mvc\RouteMatch</em> &amp;$match</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Dispatcher</em> $dispatcher</code> - Dispatcher object.</li>
+	<li><code><em>\XF\Mvc\RouteMatch</em> &amp;$match</code> - Route match object.</li>
+</ol>]]></event>
+  <event event_id="dispatcher_post_dispatch"><![CDATA[<p>Called after the app post dispatch method is called and after the Reply and RouteMatch objects have been modified. Also gives access to the original RouteMatch object.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Dispatcher</em> $dispatcher, <em>\XF\Mvc\Reply\AbstractReply</em> &amp;$reply, <em>\XF\Mvc\RouteMatch</em> $routeMatch, <em>\XF\Mvc\RouteMatch</em> $originalMatch</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Dispatcher</em> $dispatcher</code> - Dispatcher object.</li>
+	<li><code><em>\XF\Mvc\Reply\AbstractReply</em> &amp;$reply</code> - Reply object.</li>
+	<li><code><em>\XF\Mvc\RouteMatch</em> $routeMatch</code> - Route match object.</li>
+	<li><code><em>\XF\Mvc\RouteMatch</em> $originalMatch</code> - Original route match object.</li>
+</ol>]]></event>
+  <event event_id="dispatcher_post_render"><![CDATA[<p>Called after the content has been rendered, and before the content is passed to the response body.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Dispatcher</em> $dispatcher, &amp;$content, <em>\XF\Mvc\Reply\AbstractReply</em> $reply, <em>\XF\Mvc\Renderer\AbstractRenderer</em> $renderer, <em>\XF\Http\Response</em> $response</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Dispatcher</em> $dispatcher</code> - Dispatcher object.</li>
+	<li><code>&amp;$content</code> - The rendered content.</li>
+	<li><code><em>\XF\Mvc\Reply\AbstractReply</em> $reply</code> - Reply object.</li>
+	<li><code><em>\XF\Mvc\Renderer\AbstractRenderer</em> $renderer</code> - Renderer object.</li>
+	<li><code><em>\XF\Http\Response</em> $response</code> - HTTP Response object.</li>
+</ol>]]></event>
+  <event event_id="dispatcher_pre_dispatch"><![CDATA[<p>Called before the app pre dispatch method is called and before the dispatch loop, allows you to modify the original RouteMatch object before it is modified.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Dispatcher</em> $dispatcher, <em>\XF\Mvc\RouteMatch</em> $routeMatch</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Dispatcher</em> $dispatcher</code> - Dispatcher object.</li>
+	<li><code><em>\XF\Mvc\RouteMatch</em> $routeMatch</code> - Route match object.</li>
+</ol>]]></event>
+  <event event_id="dispatcher_pre_render"><![CDATA[<p>Called before the app pre render method is called.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Dispatcher</em> $dispatcher, <em>\XF\Mvc\Reply\AbstractReply</em> $reply, $responseType</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Dispatcher</em> $dispatcher</code> - Dispatcher object.</li>
+	<li><code><em>\XF\Mvc\Reply\AbstractReply</em> $reply</code> - Reply object.</li>
+	<li><code>$responseType</code> - Response type as a string, e.g. 'html', 'json' etc.</li>
+</ol>]]></event>
+  <event event_id="editor_button_data"><![CDATA[<p>Fired when loading editor button data for customization in the control panel. This is called before separators or custom dropdowns are added.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>array</em> &amp;$buttons, <em>\XF\Data\Editor</em> $editorData</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>array</em> &amp;$buttons</code> - List of buttons that people can customize their editor toolbar with.</li>
+	<li><code><em>\XF\Data\Editor</em> $editorData</code> - The editor data object triggering the event.</li>
+</ol>]]></event>
+  <event event_id="editor_dialog"><![CDATA[<p>Fired when loading a dialog for the rich text editor.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>array</em> &amp;$data, <em>\XF\Mvc\Controller</em> $controller</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>array</em> &amp;$data</code> - The data for the dialog view. Contains 3 keys: view (view class to be loaded), template (name of template to be displayed), and params (array of data to be passed to the view/template).</li>
+	<li><code><em>\XF\Mvc\Controller</em> $controller</code> - The controller triggering this event.</li>
+</ol>
+
+<p><b>Event hint:</b> The name of the dialog as passed into the <code>XF\Pub\Controller\Editor::loadDialog</code> method. Note the event hint will be an alphanumeric version of the dialog name.</p>]]></event>
+  <event event_id="entity_defaults"><![CDATA[<p>Event fires after the default Entity values have been applied. You can set your own defaults directly using <code>$entity->field = 'value';</code>.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Entity\Entity</em> $entity</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Entity\Entity</em> $entity</code> - Entity object.</li>
+</ol>
+
+<p><b>Event hint:</b> Fully qualified name of the root class that was called.</p>]]></event>
+  <event event_id="entity_post_delete"><![CDATA[<p>Event fires after the Entity specific <code>_postDelete()</code> method is called and after the post delete of any behaviors.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Entity\Entity</em> $entity</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Entity\Entity</em> $entity</code> - Entity object.</li>
+</ol>
+
+<p><b>Event hint:</b> Fully qualified name of the root class that was called.</p>]]></event>
+  <event event_id="entity_post_save"><![CDATA[<p>Event fires after the Entity specific <code>_postSave()</code> method is called and after the post save of any behaviors.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Entity\Entity</em> $entity</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Entity\Entity</em> $entity</code> - Entity object.</li>
+</ol>
+
+<p><b>Event hint:</b> Fully qualified name of the root class that was called.</p>]]></event>
+  <event event_id="entity_pre_delete"><![CDATA[<p>Event fires after the Entity specific <code>_preDelete()</code> method is called and after the pre delete of any behaviors.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Entity\Entity</em> $entity</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Entity\Entity</em> $entity</code> - Entity object.</li>
+</ol>
+
+<p><b>Event hint:</b> Fully qualified name of the root class that was called.</p>]]></event>
+  <event event_id="entity_pre_save"><![CDATA[<p>Event fires after the Entity specific <code>_preSave()</code> method is called and after the pre save of any behaviors.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Entity\Entity</em> $entity</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Entity\Entity</em> $entity</code> - Entity object.</li>
+</ol>
+
+<p><b>Event hint:</b> Fully qualified name of the root class that was called.</p>]]></event>
+  <event event_id="entity_structure"><![CDATA[<p>Allows direct modification of the Entity structure.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Mvc\Entity\Manager</em> $em, <em>\XF\Mvc\Entity\Structure</em> &amp;$structure</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Mvc\Entity\Manager</em> $em</code> - Entity Manager object.</li>
+	<li><code><em>\XF\Mvc\Entity\Structure</em> &amp;$structure</code> - Entity Structure object.</li>
+</ol>
+
+<p><b>Event hint:</b> Fully qualified name of the root class that was called.</p>]]></event>
+  <event event_id="home_page_url"><![CDATA[<p>Allows the overriding of the <code>{$xf.options.homePageUrl}</code> option to a different URL.</p>
+
+<p>Callback signature:</p>
+<blockquote><code>&amp;$homePageUrl, <em>\XF\Mvc\Router</em> $router</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code>&amp;$homePageUrl</code> - The current home page URL.</li>
+	<li><code><em>\XF\Mvc\Router</em> $router</code> - XF router object.</li>
+</ol>]]></event>
+  <event event_id="http_client_config"><![CDATA[<p>Fired after the default options for the default HTTP client have been applied.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\GuzzleHttp\Client</em> &amp;$client</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\GuzzleHttp\Client</em> &amp;$client</code> - Guzzle HTTP client object.</li>
+</ol>]]></event>
+  <event event_id="http_client_config_untrusted"><![CDATA[<p>Fired after the untrusted HTTP client has been setup with its default options.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\GuzzleHttp\Client</em> &amp;$client</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\GuzzleHttp\Client</em> &amp;$client</code> - Guzzle HTTP client object.</li>
+</ol>]]></event>
+  <event event_id="http_client_options"><![CDATA[<p>Fired before the default HTTP client has been setup so its default options can be modified.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>array</em> &amp;$optons</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>array</em> &amp;$options</code> - Array of options to be passed into the Guzzle HTTP client object.</li>
+</ol>]]></event>
+  <event event_id="http_client_options_untrusted"><![CDATA[<p>Fired before the untrusted HTTP client has been setup so its default options can be modified.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>array</em> &amp;$optons</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>array</em> &amp;$options</code> - Array of options to be passed into the Guzzle HTTP client object.</li>
+</ol>]]></event>
+  <event event_id="import_importer_classes"><![CDATA[<p>Fired inside the <code>importers</code> container in the Import sub-container. Add-ons can use this to add additional importer classes to the importer list. The class names can be fully qualified or the short class version e.g. <code>AddOn:ClassName</code>.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\SubContainer\Import</em> $container, <em>\XF\Container</em> $parentContainer, <em>array</em> &amp;$importers</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\SubContainer\Import</em> $container</code> - Import sub-container object.</li>
+	<li><code><em>\XF\Container</em> $parentContainer</code> - Global App object.</li>
+	<li><code><em>array</em> &amp;$importers</code> - Array of importers.</li>
+</ol>]]></event>
+  <event event_id="inline_mod_actions"><![CDATA[<p>Fires when an inline moderation handler is being instantiated. Allows direct modification of the possible actions, allowing additional simple actions and action handlers to be defined for an existing content type.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\InlineMod\AbstractHandler</em> $handler, <em>\XF\App</em> $app, <em>array</em> &amp;$actions</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\InlineMod\AbstractHandler</em> $handler</code> - Spam sub-container object.</li>
+	<li><code><em>\XF\App</em> $app</code> - Global App object.</li>
+	<li><code><em>array</em> &amp;$actions</code> - Array of actions already defined for this handler.</li>
+</ol>
+
+<p><b>Event hint:</b> The content type for the desired handler.</p>]]></event>
+  <event event_id="mailer_setup"><![CDATA[<p>Fires after the initial setup of the Mailer object inside the global App's "mailer" container.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Container</em> $container, <em>\XF\Mail\Mailer</em> &amp;$mailer</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Container</em> $container</code> - Dependency injection container object.</li>
+	<li><code><em>\XF\Mail\Mailer</em> &amp;$mailer</code> - Mailer object.</li>
+</ol>]]></event>
+  <event event_id="mailer_transport_setup"><![CDATA[<p>This allows you to override the mail transport object with your own approach.</p>
+
+<p>Fires only if the config flag <code>enableMail</code> is true.</p>
+
+<p>See <code>\XF\Mail\Mailer::getTransportFromOption()</code> for more info on transport objects.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Container</em> $container, &amp;$transport = null</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Container</em> $container</code> - Dependency injection container object.</li>
+	<li><code>&amp;$transport</code> - This argument allows you to return the mail transport object override.</li>
+</ol>]]></event>
+  <event event_id="mounted_file_write"><![CDATA[<p>Called when a mounted filesystem file is written to. By default, this includes data, internal data, and code cache files..</p>
+
+<p>Callback signature:</p>
+<blockquote><code>$type, $filename, \League\Flysystem\EventableFilesystem\Event\After $event</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>string</em> $type</code> - the type of file written to (data, internal-data, code-cache, etc).</li>
+	<li><code><em>string</em> $filename</code> - the name of the file that has changed.</li>
+	<li><code><em>\League\Flysystem\EventableFilesystem\Event\After</em> $event</code> - the Flysystem event that triggered this. This provides access to more specific information about the change (such as the specific method called and the arguments provided).</li>
+</ol>]]></event>
+  <event event_id="navigation_setup"><![CDATA[<p>Allows direct modification of the flat and tree versions of the navigation array after it has been rendered from the navigation cache.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Pub\App</em> $app, <em>array</em> &amp;$navigationFlat, <em>array</em> &amp;$navigationTree</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Pub\App</em> $app</code> - Public App object.</li>
+	<li><code><em>array</em> &amp;$navigationFlat</code> - Flat array of navigation entries.</li>
+	<li><code><em>array</em> &amp;$navigationTree</code> - Nested tree of navigation entries, grouped by their applicable parents.</li>
+</ol>]]></event>
+  <event event_id="notices_setup"><![CDATA[<p>Allows modification of the <code>\XF\NoticeList</code> object after the default and admin defined (if enabled) notices have been added.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Pub\App</em> $app, <em>\XF\NoticeList</em> $noticeList, <em>array</em> $pageParams</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Pub\App</em> $app</code> - Public App object.</li>
+	<li><code><em>\XF\NoticeList</em> $noticeList</code> - NoticeList object.</li>
+	<li><code><em>array</em> $pageParams</code> - Array of page params.</li>
+</ol>]]></event>
+  <event event_id="router_public_setup"><![CDATA[<p>Fires after the initial setup of the public router inside the global App's "router.public" container.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Container</em> $container, <em>\XF\Mvc\Router</em> &amp;$router</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Container</em> $container</code> - Dependency injection container object.</li>
+	<li><code><em>\XF\Mvc\Router</em> &amp;$router</code> - Router object.</li>
+</ol>]]></event>
+  <event event_id="search_source_setup"><![CDATA[<p>This allows you to override the search source object.</p>
+
+<p>Fires when the <code>search.source</code> container is called.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Container</em> $container, &amp;$source</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Container</em> $container</code> - Dependency injection container object.</li>
+	<li><code>&amp;$source</code> - This argument allows you to return the search source object override. If set, this must be an instance of \XF\Search\Source\AbstractSource.</li>
+</ol>]]></event>
+  <event event_id="session_public_storage_setup"><![CDATA[<p>This allows you to override the public session storage object.</p>
+
+<p>Fires when the <code>session.public.storage</code> container is called.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Container</em> $container, <em>\Doctrine\Common\Cache\CacheProvider</em> $cache = null, &amp;$storage</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Container</em> $container</code> - Dependency injection container object.</li>
+	<li><code><em>\Doctrine\Common\Cache\CacheProvider</em> $cache</code> - Cache provider object (if configured)</li>
+	<li><code>&amp;$storage</code> - This argument allows you to return the session storage object override. If set, this must be an instance of \XF\Session\StorageInterface.</li>
+</ol>]]></event>
+  <event event_id="spam_content_providers"><![CDATA[<p>Fired inside the <code>contentProviders</code> container in the Spam sub-container.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\SubContainer\Spam</em> $container, <em>\XF\Container</em> $parentContainer, <em>array</em> &amp;$providers</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\SubContainer\Spam</em> $container</code> - Spam sub-container object.</li>
+	<li><code><em>\XF\Container</em> $parentContainer</code> - Global App object.</li>
+	<li><code><em>array</em> &amp;$providers</code> - Array of content checker providers.</li>
+</ol>]]></event>
+  <event event_id="spam_content_submitter"><![CDATA[<p>Fired inside the <code>contentSubmitter</code> container in the Spam sub-container. The <code>$checker</code> object allows you to add additional providers which will be used to submit details of users and their content when spam is cleaned.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\SubContainer\Spam</em> $container, <em>\XF\Container</em> $parentContainer, <em>\XF\Spam\ContentChecker</em> &amp;$checker</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\SubContainer\Spam</em> $container</code> - Spam sub-container object.</li>
+	<li><code><em>\XF\Container</em> $parentContainer</code> - Global App object.</li>
+	<li><code><em>\XF\Spam\ContentChecker</em> &amp;$checker</code> - Spam checker object.</li>
+</ol>]]></event>
+  <event event_id="spam_content_submitter_ham"><![CDATA[<p>Fired inside the <code>contentHamSubmitter</code> container in the Spam sub-container. The <code>$checker</code> object allows you to add additional providers which will be used to re-submit details of users and their content when previously detected spam content is approved.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\SubContainer\Spam</em> $container, <em>\XF\Container</em> $parentContainer, <em>\XF\Spam\ContentChecker</em> &amp;$checker</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\SubContainer\Spam</em> $container</code> - Spam sub-container object.</li>
+	<li><code><em>\XF\Container</em> $parentContainer</code> - Global App object.</li>
+	<li><code><em>\XF\Spam\ContentChecker</em> &amp;$checker</code> - Spam checker object.</li>
+</ol>]]></event>
+  <event event_id="spam_user_providers"><![CDATA[<p>Fired inside the <code>userProviders</code> container in the Spam sub-container.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\SubContainer\Spam</em> $container, <em>\XF\Container</em> $parentContainer, <em>array</em> &amp;$providers</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\SubContainer\Spam</em> $container</code> - Spam sub-container object.</li>
+	<li><code><em>\XF\Container</em> $parentContainer</code> - Global App object.</li>
+	<li><code><em>array</em> &amp;$providers</code> - Array of user checker providers.</li>
+</ol>]]></event>
+  <event event_id="spam_user_submitter"><![CDATA[<p>Fired inside the <code>userSubmitter</code> container in the Spam sub-container. The <code>$checker</code> object allows you to add additional providers which will be used to submit details of spam users.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\SubContainer\Spam</em> $container, <em>\XF\Container</em> $parentContainer, <em>\XF\Spam\UserChecker</em> &amp;$checker</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\SubContainer\Spam</em> $container</code> - Spam sub-container object.</li>
+	<li><code><em>\XF\Container</em> $parentContainer</code> - Global App object.</li>
+	<li><code><em>\XF\Spam\UserChecker</em> &amp;$checker</code> - Spam checker object.</li>
+</ol>]]></event>
+  <event event_id="string_formatter_setup"><![CDATA[<p>Fired when the String formatter object has been setup.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Container</em> $container, <em>\XF\Str\Formatter</em> &amp;$formatter</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Container</em> $container</code> - Dependency injection container object.</li>
+	<li><code><em>\XF\Str\Formatter</em> &amp;$formatter</code> - The String formatter object.</li>
+</ol>]]></event>
+  <event event_id="templater_global_data"><![CDATA[<p>Allows the global template data to be manipulated. This is the data available to templates under the <code>{$xf}</code> param.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\App</em> $app, <em>array</em> &amp;$data, $reply</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\App</em> $app</code> - Global App object.</li>
+	<li><code><em>array</em> &amp;$data</code> - Global template data.</li>
+	<li><code>$reply</code> - This may contain the \XF\Mvc\Reply\AbstractReply object from the controller. It may not be available; null will be provided instead.</li>
+</ol>]]></event>
+  <event event_id="templater_macro_post_render"><![CDATA[<p>Allows the modification of the rendered macro output.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Template\Templater</em> $templater, $type, $template, $name, &amp;$output</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Template\Templater</em> $templater</code> - Templater object.</li>
+	<li><code>$type</code> - Template type.</li>
+	<li><code>$template</code> - Template name.</li>
+	<li><code>$name</code> - Macro name.</li>
+	<li><code>&amp;$output</code> - Rendered output.</li>
+</ol>
+
+<p><b>Event hint:</b> A string representing the template type, template name and macro name, e.g. <code>public:template_name:macro_name</code>.</p>]]></event>
+  <event event_id="templater_macro_pre_render"><![CDATA[<p>Allows the modification of various properties for template macros before they are rendered.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Template\Templater</em> $templater, &amp;$type, &amp;$template, &amp;$name, <em>array</em> &amp;$arguments, <em>array</em> &amp;$globalVars</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Template\Templater</em> $templater</code> - Templater object.</li>
+	<li><code>&amp;$type</code> - Template type.</li>
+	<li><code>&amp;$template</code> - Template name.</li>
+	<li><code>&amp;$name</code> - Macro name.</li>
+	<li><code><em>array</em> &amp;$arguments</code> - Array of arguments passed to this macro.</li>
+	<li><code><em>array</em> &amp;$globalVars</code> - Array of global vars available to this macro.</li>
+</ol>
+
+<p><b>Event hint:</b> A string representing the template type, template name and macro name, e.g. <code>public:template_name:macro_name</code>.</p>]]></event>
+  <event event_id="templater_setup"><![CDATA[<p>Fired when the Templater object has been setup.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Container</em> $container, <em>\XF\Template\Templater</em> &amp;$templater</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Container</em> $container</code> - Dependency injection container object.</li>
+	<li><code><em>\XF\Template\Templater</em> &amp;$templater</code> - The Templater object. <b>Note:</b> This could also be the Mailer templater.</li>
+</ol>]]></event>
+  <event event_id="templater_template_post_render"><![CDATA[<p>Allows the modification of the rendered template output.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Template\Templater</em> $templater, $type, $template, &amp;$output</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Template\Templater</em> $templater</code> - Templater object.</li>
+	<li><code>$type</code> - Template type.</li>
+	<li><code>$template</code> - Template name.</li>
+	<li><code>&amp;$output</code> - Rendered output.</li>
+</ol>
+
+<p><b>Event hint:</b> A string representing the template type and name, e.g. <code>public:template_name</code>.</p>]]></event>
+  <event event_id="templater_template_pre_render"><![CDATA[<p>Allows the modification of various properties for templates before they are rendered.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Template\Templater</em> $templater, &amp;$type, &amp;$template, <em>array</em> &amp;$params</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Template\Templater</em> $templater</code> - Templater object.</li>
+	<li><code>&amp;$type</code> - Template type.</li>
+	<li><code>&amp;$template</code> - Template name.</li>
+	<li><code><em>array</em> &amp;$params</code> - Array of parameters passed into this template.</li>
+</ol>
+
+<p><b>Event hint:</b> A string representing the template type and name, e.g. <code>public:template_name</code>.</p>]]></event>
+  <event event_id="user_content_change_init"><![CDATA[<p>Fired inside the constructor <code>\XF\Service\User\ContentChange</code> class in the <code>combineData()</code> method.</p>
+
+<p>This allows you to add extra tables and columns that should be updated when a user is renamed, deleted or merged. Note that adding steps requires a class extension.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Service\User\ContentChange</em> $changeService, <em>array</em> &amp;$updates</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Service\User\ContentChange</em> $changeService</code> - The service being initialized.</li>
+	<li><code><em>array</em> &amp;$updates</code> - A list of tables and columns within that need to be updated when this service runs.</li>
+</ol>]]></event>
+  <event event_id="user_delete_clean_init"><![CDATA[<p>Fired inside the constructor of the <code>\XF\Service\User\DeleteCleanUp</code> class.</p>
+
+<p>This allows you to add extra queries to clean up content from a user deletion. Note that adding steps requires a class extension.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Service\User\DeleteCleanUp</em> $deleteService, <em>array</em> &amp;$deletes</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Service\User\DeleteCleanUp</em> $deleteService</code> - The service being initialized.</li>
+	<li><code><em>array</em> &amp;$deletes</code> - A list of tables and where clauses representing content to be removed when a user is deleted.</li>
+</ol>]]></event>
+  <event event_id="user_merge_combine"><![CDATA[<p>Fired inside the <code>\XF\Service\User\Merge</code> class in the <code>combineData()</code> method.</p>
+
+<p>This allows you to add extra fields whose values should be combined while doing a user merge.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Entity\User</em> $target, <em>\XF\Entity\User</em> $source, <em>\XF\Service\User\Merge</em> $mergeService</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Entity\User</em> $target</code> - The target user (the user being merged into).</li>
+	<li><code><em>\XF\Entity\User</em> $source</code> - The source user (the user being merged from). This user will be deleted at the end of the process.</li>
+	<li><code><em>\XF\Service\User\Merge</em> $mergeService</code> - The service being used to do the merge.</li>
+</ol>]]></event>
+  <event event_id="user_searcher_orders"><![CDATA[<p>Fired inside the <code>XF\Searcher\User</code> class in the <code>getDefaultOrderOptions()</code> method.</p>
+
+<p>This allows you to add additional fields that users can be ordered by. This affects user searches in the control panel and member stats. If you are adding a string based sort order which may be used in member stats, it should be marked as string-based in the <code>$stringSortOrders</code> array.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Searcher\User</em> $userSearcher, <em>array</em> &amp;$sortOrders, <em>array</em> &amp;$stringSortOrders</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Searcher\User</em> $userSearcher</code> - User searcher object.</li>
+	<li><code><em>array</em> &amp;$sortOrders</code> - Array of existing sort order fields.</li>
+	<li><code><em>array</em> &amp;$stringSortOrders</code> - Array of existing string sort order fields.</li>
+</ol>]]></event>
+  <event event_id="visitor_extra_with"><![CDATA[<p>Called when determining what extra relations to include when fetching the visitor User entity.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>array</em> &amp;$with</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>array</em> &amp;$with</code> - array of relations to be fetched from the User entity.</li>
+</ol>
+
+<p>This will only be called for registered members.</p>]]></event>
+  <event event_id="visitor_guest_setup"><![CDATA[<p>Called when the default data for the guest User entity object is being prepared.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>array</em> &amp;$defaultData</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>array</em> &amp;$defaultData</code> - the default data to be added to the guest User entity and its relations. Add new values to the User entity: <code>$defaultData['keyName'] = 'value';</code>. Add new values to the entity's relations: <code>$defaultData['_relations']['relationName']['keyName'] = 'value';</code></li>
+</ol>
+
+<p>
+	<b>Note:</b> Any values added to the default data should be encoded as if they have been stored in the database. For example, if the column is JSON encoded, you should provide the JSON string rather than a PHP array.
+</p>]]></event>
+  <event event_id="visitor_setup"><![CDATA[<p>Called when the visitor's User entity has been prepared.</p>
+
+<p>Callback signature:</p>
+<blockquote><code><em>\XF\Entity\User</em> &amp;$visitor</code></blockquote>
+
+<p>Arguments:</p>
+<ol>
+	<li><code><em>\XF\Entity\User</em> &amp;$visitor</code> - the visitor's User entity. From this, you can inspect the user, their permissions, profile fields and all User entity relations etc.</li>
+</ol>
+
+<p>This will be called for registered members and guests.</p>]]></event>
+</code_events>

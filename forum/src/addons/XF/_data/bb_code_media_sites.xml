@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bb_code_media_sites>
+  <site media_site_id="applemusic" site_title="Apple Music" site_url="https://www.apple.com/music" match_is_regex="0" match_callback_class="XF\BbCode\Helper\AppleMusic" match_callback_method="matchCallback" embed_html_callback_class="XF\BbCode\Helper\AppleMusic" embed_html_callback_method="htmlCallback" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="1">
+    <match_urls><![CDATA[itunes.apple.com/{$id}]]></match_urls>
+    <embed_html><![CDATA[<div class="bbMediaWrapper">
+	<div class="bbMediaWrapper-inner bbMediaWrapper-inner--{$height}px">
+		<iframe src="{$url}"
+			style="{$style}"
+			height="{$height}px"
+			frameborder="0"
+			scrolling="{$scrolling}"></iframe>
+	</div>
+</div>]]></embed_html>
+  </site>
+  <site media_site_id="dailymotion" site_title="Dailymotion" site_url="https://www.dailymotion.com" match_is_regex="0" match_callback_class="XF\BbCode\Helper\DailyMotion" match_callback_method="matchCallback" embed_html_callback_class="XF\BbCode\Helper\DailyMotion" embed_html_callback_method="htmlCallback" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[dailymotion.com/video/{$id:alphanum}
+dai.ly/{$id:alphanum}]]></match_urls>
+    <embed_html><![CDATA[<div class="bbMediaWrapper">
+	<div class="bbMediaWrapper-inner">
+		<iframe src="https://www.dailymotion.com/embed/video/{$id}?start={$start}&width=560&hideInfos=1"
+				width="560" height="315"
+				allowfullscreen
+				frameborder="0"></iframe>
+	</div>
+</div>]]></embed_html>
+  </site>
+  <site media_site_id="facebook" site_title="Facebook" site_url="https://www.facebook.com" match_is_regex="1" match_callback_class="XF\BbCode\Helper\Misc" match_callback_method="matchEncodeAmpersands" embed_html_callback_class="XF\BbCode\Helper\Facebook" embed_html_callback_method="htmlCallback" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[#facebook.com/[^/]+/videos/(?P<id>\d+)#si
+#facebook.com/[^/]+/videos/(?P<id>\d+)#si
+#facebook.com/watch/\?v=(?P<id>\d+)#si
+#facebook.com/video.php\?id=(?P<id>\d)#si
+#facebook.com/video.php\?v=(?P<id>\d+)#si
+#facebook.com/(?P<id>[^/]+/posts/\d+)#si
+#facebook.com/(?P<id>[^/]+/photos/(?:a\.\d+/)?\d+)#si
+#facebook.com/permalink.php\?(?P<id>story_fbid=\d+&id=\d+)#si]]></match_urls>
+    <embed_html><![CDATA[<xf:page option="jsState.fbSdk" value="{{ true }}" />
+
+<xf:if is="$type == 'video'">
+	<xf:set var="$fbClass" value="fb-video" />
+	<xf:set var="$fbHref" value="https://www.facebook.com/video.php?v={$id}" />
+<xf:else />
+	<xf:set var="$fbClass" value="fb-post" />
+	<xf:set var="$fbHref" value="https://www.facebook.com/{$idPlain}" />
+</xf:if>
+
+<div class="bbMediaJustifier {$fbClass}"
+	 data-href="{$fbHref}"
+	 data-width="500"
+	 data-show-text="true"
+	 data-show-captions="true">
+	<div class="fb-xfbml-parse-ignore">
+		<a href="{$fbHref}" rel="external" target="_blank">
+			<i class="fab fa-facebook-official" aria-hidden="true"></i> {$fbHref}</a>
+	</div>
+</div>
+
+<xf:comment>
+	// data attributes available:
+	data-autoplay="false"
+	data-allowfullscreen="false"
+	data-show-text="false"
+	data-show-captions="false"
+</xf:comment>]]></embed_html>
+  </site>
+  <site media_site_id="flickr" site_title="Flickr" site_url="https://www.flickr.com" match_is_regex="1" match_callback_class="XF\BbCode\Helper\Flickr" match_callback_method="matchCallback" supported="1" active="1" oembed_enabled="1" oembed_api_endpoint="https://www.flickr.com/services/oembed" oembed_url_scheme="https://flic.kr/p/{$id}" oembed_retain_scripts="0">
+    <match_urls><![CDATA[#flickr\.com/photos/(?P<user>[a-z0-9_-]+)/(?P<id>\d+)#si
+#flickr\.com/photos/(?P<user>\d+@N\d+)/(?P<id>\d+)#si
+#c(?P<farm>\d+)\.staticflickr\.com/(?P<server1>\d+)/(?P<server2>\d+)/(?P<id>\d+)_#si
+#flic\.kr/p/(?P<id>[a-z0-9]+)#si]]></match_urls>
+    <embed_html><![CDATA[<!-- oEmbed - template unused -->]]></embed_html>
+  </site>
+  <site media_site_id="giphy" site_title="Giphy" site_url="https://giphy.com/" match_is_regex="0" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[giphy.com/gifs/*-{$id}
+gph.is/{$id}
+media.giphy.com/media/{$id}/giphy.gif]]></match_urls>
+    <embed_html><![CDATA[<div class="bbMediaWrapper">
+	<div class="bbMediaWrapper-inner bbMediaWrapper-inner--4to3">
+		<iframe src="https://giphy.com/embed/{$id}"
+			width="500"
+			height="375"
+			frameborder="0"
+			allowfullscreen></iframe>
+	</div>
+</div>]]></embed_html>
+  </site>
+  <site media_site_id="imgur" site_title="Imgur" site_url="https://imgur.com" match_is_regex="0" match_callback_class="XF\BbCode\Helper\Imgur" match_callback_method="matchCallback" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[imgur.com/gallery/{$id:alphanum}
+imgur.com/a/{$id:alphanum}
+imgur.com/r/*/{$id:alphanum}
+imgur.com/{$id:alphanum}]]></match_urls>
+    <embed_html><![CDATA[<xf:page option="jsState.imgur" value="{{ true }}" />
+
+<div class="bbMediaWrapper">
+	<blockquote class="imgur-embed-pub" lang="en" data-id="{$idRaw}">
+		<a href="http://imgur.com/{$idSlash}" rel="external" target="_blank">http://imgur.com/{$idSlash}</a>
+	</blockquote>
+</div>]]></embed_html>
+  </site>
+  <site media_site_id="instagram" site_title="Instagram" site_url="https://www.instagram.com" match_is_regex="0" supported="1" active="1" oembed_enabled="1" oembed_api_endpoint="http://api.instagram.com/oembed?omitscript=1" oembed_url_scheme="http://instagr.am/p/{$id}/" oembed_retain_scripts="0">
+    <match_urls><![CDATA[instagram.com/p/{$id}
+instagr.am/p/{$id}]]></match_urls>
+    <embed_html><![CDATA[<!-- oEmbed - template unused -->]]></embed_html>
+  </site>
+  <site media_site_id="liveleak" site_title="Liveleak" site_url="https://www.liveleak.com" match_is_regex="0" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[liveleak.com/view?i={$id}
+liveleak.com/view?t={$id}]]></match_urls>
+    <embed_html><![CDATA[<div class="bbMediaWrapper">
+	<div class="bbMediaWrapper-inner">
+		<iframe src="http://www.liveleak.com/ll_embed?i={$id}"
+				width="560" height="315"
+				frameborder="0" allowfullscreen="true"></iframe>
+	</div>
+</div>]]></embed_html>
+  </site>
+  <site media_site_id="metacafe" site_title="Metacafe" site_url="http://www.metacafe.com" match_is_regex="1" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[#metacafe.com/watch/(?P<id>[a-z0-9-]+)(/|$)#siU]]></match_urls>
+    <embed_html><![CDATA[<div class="bbMediaWrapper">
+	<div class="bbMediaWrapper-inner">
+		<iframe width="560" height="315"
+				src="http://www.metacafe.com/embed/{$id}/"
+				frameborder="0" allowfullscreen="true"></iframe>
+	</div>
+</div>]]></embed_html>
+  </site>
+  <site media_site_id="pinterest" site_title="Pinterest" site_url="https://www.pinterest.com" match_is_regex="0" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[pinterest.com/pin/{$id:digits}
+pinterest.co.uk/pin/{$id:digits}]]></match_urls>
+    <embed_html><![CDATA[<xf:page option="jsState.pinterest" value="{{ true }}" />
+
+<div class="bbMediaJustifier">
+	<a data-pin-do="embedPin"
+		data-pin-width="large"
+		href="https://www.pinterest.com/pin/{$idDigits}/">
+		<i class="fab fa-pinterest-square" aria-hidden="true"></i> https://www.pinterest.com/pin/{$idDigits}/</a>
+</div>]]></embed_html>
+  </site>
+  <site media_site_id="reddit" site_title="Reddit" site_url="https://www.reddit.com" match_is_regex="0" match_callback_class="XF\BbCode\Helper\Reddit" match_callback_method="matchCallback" embed_html_callback_class="XF\BbCode\Helper\Reddit" embed_html_callback_method="htmlCallback" supported="1" active="1" oembed_enabled="1" oembed_api_endpoint="https://www.reddit.com/oembed?omitscript=1" oembed_url_scheme="https://www.reddit.com/r/{$id}" oembed_retain_scripts="0">
+    <match_urls><![CDATA[reddit.com/r/*/comments/{$id}]]></match_urls>
+    <embed_html><![CDATA[<!-- oEmbed - template unused -->]]></embed_html>
+  </site>
+  <site media_site_id="soundcloud" site_title="SoundCloud" site_url="https://soundcloud.com" match_is_regex="0" match_callback_class="XF\BbCode\Helper\Soundcloud" match_callback_method="matchCallback" supported="1" active="1" oembed_enabled="1" oembed_api_endpoint="https://soundcloud.com/oembed?format=json" oembed_url_scheme="https://soundcloud.com/{$id}" oembed_retain_scripts="0">
+    <match_urls><![CDATA[soundcloud.com/{$id}]]></match_urls>
+    <embed_html><![CDATA[<!-- oEmbed - template usused -->]]></embed_html>
+  </site>
+  <site media_site_id="spotify" site_title="Spotify" site_url="https://www.spotify.com" match_is_regex="0" match_callback_class="XF\BbCode\Helper\Spotify" match_callback_method="matchCallback" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[open.spotify.com/track/{$id:alphanum}
+open.spotify.com/album/{$id:alphanum}
+open.spotify.com/artist/{$id:alphanum}
+open.spotify.com/user/*/playlist/{$id:alphanum}]]></match_urls>
+    <embed_html><![CDATA[<div class="bbMediaWrapper">
+	<div class="bbMediaWrapper-inner">
+		<iframe src="https://open.spotify.com/embed?uri=spotify:{$id}&theme={{ property('styleType') == 'light' ? 'white' : 'black' }}"
+				width="500" height="282"
+				frameborder="0" allowtransparency="false"></iframe>
+	</div>
+</div>]]></embed_html>
+  </site>
+  <site media_site_id="tumblr" site_title="Tumblr" site_url="https://www.tumblr.com" match_is_regex="0" match_callback_class="XF\BbCode\Helper\Tumblr" match_callback_method="matchCallback" supported="1" active="1" oembed_enabled="1" oembed_api_endpoint="https://www.tumblr.com/oembed/1.0/" oembed_url_scheme="https://{$id}" oembed_retain_scripts="1">
+    <match_urls><![CDATA[.tumblr.com/post/{$id}]]></match_urls>
+    <embed_html><![CDATA[<!-- oEmbed - template unused -->]]></embed_html>
+  </site>
+  <site media_site_id="twitch" site_title="Twitch" site_url="https://www.twitch.tv" match_is_regex="0" match_callback_class="XF\BbCode\Helper\Twitch" match_callback_method="matchCallback" embed_html_callback_class="XF\BbCode\Helper\Twitch" embed_html_callback_method="htmlCallback" supported="1" active="1" oembed_enabled="0" oembed_api_endpoint="https://api.twitch.tv/v4/oembed" oembed_url_scheme="https://twitch.tv/videos/{$id}" oembed_retain_scripts="0">
+    <match_urls><![CDATA[www.twitch.tv/videos/{$id:digits}
+www.twitch.tv/{$id:alphanum}
+clips.twitch.tv/{$id:alphanum}]]></match_urls>
+    <embed_html><![CDATA[<div class="bbMediaWrapper">
+	<div class="bbMediaWrapper-inner">
+		<iframe src="{$url}"
+			width="560" height="315"
+			frameborder="0" allowfullscreen="true"
+			scrolling="no"></iframe>
+	</div>
+</div>]]></embed_html>
+  </site>
+  <site media_site_id="twitter" site_title="Twitter" site_url="https://twitter.com" match_is_regex="0" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[twitter.com/*/status/{$id}
+twitter.com/statuses/{$id}]]></match_urls>
+    <embed_html><![CDATA[<xf:page option="jsState.twitter" value="{{ true }}" />
+<xf:js src="xf/embed.js" min="1" />
+
+<div class="bbMediaJustifier bbCode-tweet"
+	  data-xf-init="tweet"
+	  data-tweet-id="{$id}"
+	  data-lang="{$xf.language.language_code}"
+	  data-theme="{{ property('styleType') }}"
+	  ><a href="https://twitter.com/i/web/status/{$id}" rel="external" target="_blank">
+	<i class="fab fa-twitter" aria-hidden="true"></i> https://twitter.com/i/web/status/{$id}</a></div>]]></embed_html>
+  </site>
+  <site media_site_id="vimeo" site_title="Vimeo" site_url="https://vimeo.com" match_is_regex="0" match_callback_class="XF\BbCode\Helper\Vimeo" match_callback_method="matchCallback" embed_html_callback_class="XF\BbCode\Helper\Vimeo" embed_html_callback_method="htmlCallback" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[vimeo.com/{$id:digits}
+vimeo.com/groups/*/videos/{$id:digits}]]></match_urls>
+    <embed_html><![CDATA[<div class="bbMediaWrapper">
+	<div class="bbMediaWrapper-inner">
+		<iframe src="https://player.vimeo.com/video/{$id}{{ $start ? "#t={$start}" : '' }}"
+				width="560" height="315"
+				frameborder="0" allowfullscreen="true"></iframe>
+	</div>
+</div>]]></embed_html>
+  </site>
+  <site media_site_id="youtube" site_title="YouTube" site_url="https://www.youtube.com" match_is_regex="0" match_callback_class="XF\BbCode\Helper\YouTube" match_callback_method="matchCallback" embed_html_callback_class="XF\BbCode\Helper\YouTube" embed_html_callback_method="htmlCallback" supported="1" active="1" oembed_enabled="0" oembed_retain_scripts="0">
+    <match_urls><![CDATA[youtube.com/watch?v={$id}
+youtube.com/watch?*&v={$id}
+youtube.com/v/{$id}
+youtu.be/{$id}
+youtube.com/*/u/*/{$id}
+youtube.com/embed/{$id}]]></match_urls>
+    <embed_html><![CDATA[<div class="bbMediaWrapper">
+	<div class="bbMediaWrapper-inner">
+		<iframe src="https://www.youtube.com/embed/{$id}?wmode=opaque&start={$start}"
+				width="560" height="315"
+				frameborder="0" allowfullscreen="true"></iframe>
+	</div>
+</div>]]></embed_html>
+  </site>
+</bb_code_media_sites>

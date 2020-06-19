@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<option_groups>
+  <group group_id="acp" icon="fa-columns" display_order="5000" debug_only="0"/>
+  <group group_id="alerts" icon="fa-bell" display_order="130" debug_only="0"/>
+  <group group_id="appearance" icon="fa-image" display_order="40" debug_only="0"/>
+  <group group_id="attachments" icon="fa-paperclip" display_order="620" debug_only="0"/>
+  <group group_id="basicBoard" icon="fa-info" display_order="20" debug_only="0"/>
+  <group group_id="boardActive" icon="fa-power-off" display_order="10" debug_only="0"/>
+  <group group_id="censoringOptions" icon="fa-asterisk" display_order="60" debug_only="0"/>
+  <group group_id="debug" icon="fa-bug" display_order="0" debug_only="1"/>
+  <group group_id="discourager" icon="fa-ban" display_order="140" debug_only="0"/>
+  <group group_id="discussionOptions" icon="fa-comment-alt" display_order="520" debug_only="0"/>
+  <group group_id="emailOptions" icon="fa-envelope" display_order="50" debug_only="0"/>
+  <group group_id="imageLinkProxy" icon="fa-server" display_order="640" debug_only="0"/>
+  <group group_id="logging" icon="fa-history" display_order="810" debug_only="0"/>
+  <group group_id="mediaEmbedding" icon="fa-video" display_order="630" debug_only="0"/>
+  <group group_id="messageOptions" icon="fa-envelope-open" display_order="611" debug_only="0"/>
+  <group group_id="newsfeed" icon="fa-newspaper" display_order="3000" debug_only="0"/>
+  <group group_id="nodeList" icon="fa-comments" display_order="510" debug_only="0"/>
+  <group group_id="performance" icon="fa-tachometer" display_order="30" debug_only="0"/>
+  <group group_id="searchOptions" icon="fa-search" display_order="710" debug_only="0"/>
+  <group group_id="seo" icon="fa-search-plus" display_order="80" debug_only="0"/>
+  <group group_id="serviceProviders" display_order="4000" debug_only="0"/>
+  <group group_id="sharing" icon="fa-share-alt" display_order="210" debug_only="0"/>
+  <group group_id="sitemap" icon="fa-sitemap" display_order="3500" debug_only="0"/>
+  <group group_id="spam" icon="fa-minus-octagon" display_order="660" debug_only="0"/>
+  <group group_id="stats" icon="fa-chart-bar" display_order="70" debug_only="0"/>
+  <group group_id="tagging" icon="fa-tags" display_order="650" debug_only="0"/>
+  <group group_id="users" icon="fa-users" display_order="120" debug_only="0"/>
+  <group group_id="usersAndRegistration" icon="fa-user-plus" display_order="110" debug_only="0"/>
+</option_groups>

@@ -1,0 +1,66 @@
+[30-Apr-2020 19:38:44 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 7
+[30-Apr-2020 19:38:44 UTC] PHP Warning:  mysqli::set_charset(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 8
+[30-Apr-2020 19:38:44 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 13
+[30-Apr-2020 19:38:44 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 14
+[30-Apr-2020 19:38:44 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 19
+[30-Apr-2020 19:38:44 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 20
+[30-Apr-2020 19:38:44 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 28
+[30-Apr-2020 19:38:44 UTC] PHP Warning:  main(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 34
+[30-Apr-2020 19:38:57 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 7
+[30-Apr-2020 19:38:57 UTC] PHP Warning:  mysqli::set_charset(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 8
+[30-Apr-2020 19:38:57 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[30-Apr-2020 19:38:57 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 37
+[30-Apr-2020 19:38:57 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 38
+[30-Apr-2020 19:42:14 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 7
+[30-Apr-2020 19:42:14 UTC] PHP Warning:  mysqli::set_charset(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 8
+[30-Apr-2020 19:42:14 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 13
+[30-Apr-2020 19:42:14 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 14
+[30-Apr-2020 19:42:14 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 19
+[30-Apr-2020 19:42:14 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 20
+[30-Apr-2020 19:42:14 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 28
+[30-Apr-2020 19:42:14 UTC] PHP Warning:  main(): Couldn't fetch mysqli in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 34
+[30-Apr-2020 21:11:04 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[30-Apr-2020 21:11:14 UTC] PHP Notice:  Undefined index: username in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 9
+[30-Apr-2020 21:11:14 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[30-Apr-2020 21:11:14 UTC] PHP Notice:  Undefined index: password in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 11
+[30-Apr-2020 21:11:14 UTC] PHP Notice:  Undefined index: process in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 12
+[30-Apr-2020 21:11:14 UTC] PHP Notice:  Undefined index: process in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 36
+[30-Apr-2020 21:11:48 UTC] PHP Notice:  Undefined index: username in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 9
+[30-Apr-2020 21:11:48 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[30-Apr-2020 21:11:48 UTC] PHP Notice:  Undefined index: password in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 11
+[30-Apr-2020 21:11:48 UTC] PHP Notice:  Undefined index: process in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 12
+[30-Apr-2020 21:11:48 UTC] PHP Notice:  Undefined index: process in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 36
+[30-Apr-2020 21:11:51 UTC] PHP Notice:  Undefined index: username in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 9
+[30-Apr-2020 21:11:51 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[30-Apr-2020 21:11:51 UTC] PHP Notice:  Undefined index: password in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 11
+[30-Apr-2020 21:11:51 UTC] PHP Notice:  Undefined index: process in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 12
+[30-Apr-2020 21:11:51 UTC] PHP Notice:  Undefined index: process in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 36
+[30-Apr-2020 21:12:09 UTC] PHP Notice:  Undefined index: username in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 9
+[30-Apr-2020 21:12:09 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[30-Apr-2020 21:12:09 UTC] PHP Notice:  Undefined index: password in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 11
+[30-Apr-2020 21:12:09 UTC] PHP Notice:  Undefined index: process in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 12
+[30-Apr-2020 21:12:09 UTC] PHP Notice:  Undefined index: process in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 36
+[30-Apr-2020 21:12:22 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[30-Apr-2020 23:15:06 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[03-May-2020 21:06:49 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[04-May-2020 14:42:38 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[04-May-2020 14:43:07 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[04-May-2020 14:43:19 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[04-May-2020 14:43:23 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[04-May-2020 14:43:30 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[04-May-2020 14:43:47 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[04-May-2020 17:51:22 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[04-May-2020 17:51:33 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[13-May-2020 22:14:47 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[13-May-2020 22:14:55 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[14-May-2020 14:19:58 UTC] PHP Notice:  Undefined index: username in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 9
+[14-May-2020 14:19:58 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[14-May-2020 14:19:58 UTC] PHP Notice:  Undefined index: password in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 11
+[14-May-2020 14:19:58 UTC] PHP Notice:  Undefined index: process in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 12
+[14-May-2020 14:19:58 UTC] PHP Notice:  Undefined index: process in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 36
+[01-Jun-2020 20:55:15 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[01-Jun-2020 20:55:24 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[01-Jun-2020 20:55:25 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[16-Jun-2020 17:48:56 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[16-Jun-2020 21:38:46 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10
+[16-Jun-2020 21:38:56 UTC] PHP Notice:  Undefined index: email in /home/aoondxwhlcoc/public_html/warface.cheaters.pro/buy/process/index.php on line 10

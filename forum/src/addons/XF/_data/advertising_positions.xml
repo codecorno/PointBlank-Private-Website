@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<advertising_positions>
+  <advertising_position position_id="container_breadcrumb_bottom_above" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="container_breadcrumb_bottom_below" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="container_breadcrumb_top_above" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="container_breadcrumb_top_below" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="container_content_above" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="container_content_below" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="container_header" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="container_sidebar_above" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="container_sidebar_below" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="container_sidenav_above" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="container_sidenav_below" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="forum_overview_bottom" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="forum_overview_top" active="1"><![CDATA[[]]]></advertising_position>
+  <advertising_position position_id="forum_view_above_node_list" active="1"><![CDATA[[{"argument":"forum","required":true}]]]></advertising_position>
+  <advertising_position position_id="forum_view_above_thread_list" active="1"><![CDATA[[{"argument":"forum","required":true}]]]></advertising_position>
+  <advertising_position position_id="forum_view_below_node_list" active="1"><![CDATA[[{"argument":"forum","required":true}]]]></advertising_position>
+  <advertising_position position_id="forum_view_below_stickies" active="1"><![CDATA[[{"argument":"forum","required":true}]]]></advertising_position>
+  <advertising_position position_id="forum_view_below_thread_list" active="1"><![CDATA[[{"argument":"forum","required":true}]]]></advertising_position>
+  <advertising_position position_id="member_view_below_tabs" active="1"><![CDATA[[{"argument":"user","required":true}]]]></advertising_position>
+  <advertising_position position_id="post_above_content" active="1"><![CDATA[[{"argument":"post","required":true}]]]></advertising_position>
+  <advertising_position position_id="post_below_container" active="1"><![CDATA[[{"argument":"post","required":true}]]]></advertising_position>
+  <advertising_position position_id="post_below_content" active="1"><![CDATA[[{"argument":"post","required":true}]]]></advertising_position>
+  <advertising_position position_id="thread_view_above_messages" active="1"><![CDATA[[{"argument":"thread","required":true}]]]></advertising_position>
+  <advertising_position position_id="thread_view_below_messages" active="1"><![CDATA[[{"argument":"thread","required":true}]]]></advertising_position>
+</advertising_positions>

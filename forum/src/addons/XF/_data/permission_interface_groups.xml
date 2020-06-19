@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permission_interface_groups>
+  <interface_group interface_group_id="bookmarkPermissions" display_order="5" is_moderator="0"/>
+  <interface_group interface_group_id="conversationModeratorPermissions" display_order="105" is_moderator="1"/>
+  <interface_group interface_group_id="conversationPermissions" display_order="100" is_moderator="0"/>
+  <interface_group interface_group_id="forumModeratorPermissions" display_order="11" is_moderator="1"/>
+  <interface_group interface_group_id="forumPermissions" display_order="10" is_moderator="0"/>
+  <interface_group interface_group_id="generalModeratorPermissions" display_order="2" is_moderator="1"/>
+  <interface_group interface_group_id="generalPermissions" display_order="1" is_moderator="0"/>
+  <interface_group interface_group_id="profilePostModeratorPermissions" display_order="205" is_moderator="1"/>
+  <interface_group interface_group_id="profilePostPermissions" display_order="200" is_moderator="0"/>
+  <interface_group interface_group_id="signaturePermissions" display_order="110" is_moderator="0"/>
+</permission_interface_groups>

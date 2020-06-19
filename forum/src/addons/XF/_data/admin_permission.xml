@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<admin_permission>
+  <admin_permission admin_permission_id="addOn" display_order="30"/>
+  <admin_permission admin_permission_id="advertising" display_order="325"/>
+  <admin_permission admin_permission_id="attachment" display_order="130"/>
+  <admin_permission admin_permission_id="ban" display_order="250"/>
+  <admin_permission admin_permission_id="bbCodeSmilie" display_order="25"/>
+  <admin_permission admin_permission_id="cron" display_order="410"/>
+  <admin_permission admin_permission_id="help" display_order="15"/>
+  <admin_permission admin_permission_id="import" display_order="450"/>
+  <admin_permission admin_permission_id="language" display_order="320"/>
+  <admin_permission admin_permission_id="navigation" display_order="340"/>
+  <admin_permission admin_permission_id="node" display_order="110"/>
+  <admin_permission admin_permission_id="notice" display_order="140"/>
+  <admin_permission admin_permission_id="option" display_order="5"/>
+  <admin_permission admin_permission_id="payment" display_order="10"/>
+  <admin_permission admin_permission_id="reaction" display_order="20"/>
+  <admin_permission admin_permission_id="rebuildCache" display_order="420"/>
+  <admin_permission admin_permission_id="style" display_order="310"/>
+  <admin_permission admin_permission_id="tags" display_order="133"/>
+  <admin_permission admin_permission_id="thread" display_order="120"/>
+  <admin_permission admin_permission_id="trophy" display_order="230"/>
+  <admin_permission admin_permission_id="upgradeXenForo" display_order="500"/>
+  <admin_permission admin_permission_id="user" display_order="210"/>
+  <admin_permission admin_permission_id="userField" display_order="220"/>
+  <admin_permission admin_permission_id="userGroup" display_order="260"/>
+  <admin_permission admin_permission_id="userUpgrade" display_order="270"/>
+  <admin_permission admin_permission_id="viewLogs" display_order="440"/>
+  <admin_permission admin_permission_id="viewStatistics" display_order="430"/>
+  <admin_permission admin_permission_id="warning" display_order="240"/>
+  <admin_permission admin_permission_id="widget" display_order="330"/>
+</admin_permission>

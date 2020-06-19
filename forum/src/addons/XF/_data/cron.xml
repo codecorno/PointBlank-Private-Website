@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cron>
+  <entry entry_id="cleanUpDaily" cron_class="XF\Cron\CleanUp" cron_method="runDailyCleanUp" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[3],"minutes":[0]}]]></entry>
+  <entry entry_id="cleanUpHourly" cron_class="XF\Cron\CleanUp" cron_method="runHourlyCleanUp" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[10]}]]></entry>
+  <entry entry_id="dailyStats" cron_class="XF\Cron\Counters" cron_method="recordDailyStats" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[0],"minutes":[30]}]]></entry>
+  <entry entry_id="deleteExpiredBans" cron_class="XF\Cron\Ban" cron_method="deleteExpiredBans" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[45]}]]></entry>
+  <entry entry_id="downgradeExpired" cron_class="XF\Cron\CleanUp" cron_method="runUserDowngrade" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[50]}]]></entry>
+  <entry entry_id="emailBounce" cron_class="XF\Cron\EmailBounce" cron_method="process" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[23,53]}]]></entry>
+  <entry entry_id="emailUnsubscribe" cron_class="XF\Cron\EmailUnsubscribe" cron_method="process" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[13,43]}]]></entry>
+  <entry entry_id="expireTempUserChanges" cron_class="XF\Cron\CleanUp" cron_method="expireTempUserChanges" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[42]}]]></entry>
+  <entry entry_id="feeder" cron_class="XF\Cron\Feeder" cron_method="importFeeds" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[2,12,22,32,42,52]}]]></entry>
+  <entry entry_id="fileCheck" cron_class="XF\Cron\FileCheck" cron_method="checkFiles" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[0],"minutes":[10]}]]></entry>
+  <entry entry_id="forumStatistics" cron_class="XF\Cron\Counters" cron_method="rebuildForumStatistics" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[3,13,23,33,43,53]}]]></entry>
+  <entry entry_id="memberStatsCache" cron_class="XF\Cron\MemberStats" cron_method="rebuildMemberStatsCache" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[0,10,20,30,40,50]}]]></entry>
+  <entry entry_id="sitemap" cron_class="XF\Cron\Sitemap" cron_method="triggerSitemapRebuild" active="1"><![CDATA[{"day_type":"dow","dow":[1,3,5],"hours":[5],"minutes":[37]}]]></entry>
+  <entry entry_id="trophy" cron_class="XF\Cron\Trophy" cron_method="runTrophyCheck" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[40]}]]></entry>
+  <entry entry_id="userGroupPromotions" cron_class="XF\Cron\UserGroupPromotion" cron_method="runPromotions" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[20]}]]></entry>
+  <entry entry_id="views" cron_class="XF\Cron\Views" cron_method="runViewUpdate" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[30]}]]></entry>
+  <entry entry_id="warningExpiry" cron_class="XF\Cron\Warnings" cron_method="expireWarnings" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[55]}]]></entry>
+</cron>

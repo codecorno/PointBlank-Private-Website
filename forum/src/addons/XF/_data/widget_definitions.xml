@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget_definitions>
+  <widget_definition definition_id="birthdays" definition_class="XF\Widget\Birthdays"/>
+  <widget_definition definition_id="find_member" definition_class="XF\Widget\FindMember"/>
+  <widget_definition definition_id="forum_statistics" definition_class="XF\Widget\ForumStatistics"/>
+  <widget_definition definition_id="html" definition_class="XF\Widget\Html"/>
+  <widget_definition definition_id="member_stat" definition_class="XF\Widget\MemberStat"/>
+  <widget_definition definition_id="members_online" definition_class="XF\Widget\MembersOnline"/>
+  <widget_definition definition_id="new_posts" definition_class="XF\Widget\NewPosts"/>
+  <widget_definition definition_id="new_profile_posts" definition_class="XF\Widget\NewProfilePosts"/>
+  <widget_definition definition_id="new_threads" definition_class="XF\Widget\NewThreads"/>
+  <widget_definition definition_id="newest_members" definition_class="XF\Widget\NewestMembers"/>
+  <widget_definition definition_id="online_statistics" definition_class="XF\Widget\OnlineStatistics"/>
+  <widget_definition definition_id="php_callback" definition_class="XF\Widget\PhpCallback"/>
+  <widget_definition definition_id="share_page" definition_class="XF\Widget\SharePage"/>
+  <widget_definition definition_id="thread_poll" definition_class="XF\Widget\ThreadPoll"/>
+  <widget_definition definition_id="visitor_panel" definition_class="XF\Widget\VisitorPanel"/>
+</widget_definitions>

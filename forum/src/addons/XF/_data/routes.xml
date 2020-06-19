@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<routes>
+  <route route_type="admin" route_prefix="add-ons" format=":str&lt;addon_id_url&gt;/" controller="XF:AddOn" context="listAddOns"/>
+  <route route_type="admin" route_prefix="admin-navigation" format=":str&lt;navigation_id&gt;/" controller="XF:AdminNavigation" context="adminNavigation"/>
+  <route route_type="admin" route_prefix="admin-permissions" format=":str&lt;admin_permission_id&gt;/" controller="XF:AdminPermission" context="adminPermissions"/>
+  <route route_type="admin" route_prefix="admins" format=":int&lt;user_id,username&gt;/" controller="XF:Admin" context="admins"/>
+  <route route_type="admin" route_prefix="advertising" format=":int&lt;ad_id,title&gt;/" controller="XF:Advertising" context="advertising"/>
+  <route route_type="admin" route_prefix="advertising" sub_name="positions" format="positions/:str&lt;position_id&gt;/" controller="XF:Advertising" context="advertisingPositions" action_prefix="position"/>
+  <route route_type="admin" route_prefix="api-keys" format=":int&lt;api_key_id&gt;/" controller="XF:ApiKey" context="apiKeys"/>
+  <route route_type="admin" route_prefix="api-scopes" format=":str&lt;api_scope_id_url&gt;/" controller="XF:ApiScope" context="apiScopes"/>
+  <route route_type="admin" route_prefix="appearance" controller="XF:Appearance" context="appearance"/>
+  <route route_type="admin" route_prefix="attachments" format=":int&lt;attachment_id,filename&gt;/" controller="XF:Attachment" context="attachments"/>
+  <route route_type="admin" route_prefix="banning" controller="XF:Banning" context="userDiscipline"/>
+  <route route_type="admin" route_prefix="banning" sub_name="users" format="users/:int&lt;user_id,username&gt;/" controller="XF:Banning" context="bannedUsers" action_prefix="users"/>
+  <route route_type="admin" route_prefix="bb-code-media-sites" format=":str&lt;media_site_id&gt;/" controller="XF:BbCodeMediaSite" context="bbCodeMediaSites"/>
+  <route route_type="admin" route_prefix="bb-codes" format=":str&lt;bb_code_id&gt;/" controller="XF:BbCode" context="customBbCodes"/>
+  <route route_type="admin" route_prefix="button-manager" controller="XF:ButtonManager" context="bbCodeButtonManager"/>
+  <route route_type="admin" route_prefix="button-manager" sub_name="dropdown" format="dropdown/:str&lt;cmd&gt;/" controller="XF:ButtonManager" context="bbCodeButtonManager" action_prefix="dropdown"/>
+  <route route_type="admin" route_prefix="captcha-questions" format=":int&lt;captcha_question_id,question&gt;/" controller="XF:CaptchaQuestion" context="qAndACaptcha"/>
+  <route route_type="admin" route_prefix="categories" format=":int&lt;node_id,title&gt;/" controller="XF:Category" context="nodes"/>
+  <route route_type="admin" route_prefix="class-extensions" format=":int&lt;extension_id,to_class&gt;/" controller="XF:ClassExtension" context="classExtensions"/>
+  <route route_type="admin" route_prefix="code-events" format=":str&lt;event_id&gt;/" controller="XF:CodeEvent" context="codeEvents"/>
+  <route route_type="admin" route_prefix="code-events" sub_name="listeners" format="listeners/:int&lt;event_listener_id,event_id&gt;/" controller="XF:CodeEvent" context="codeEventListeners" action_prefix="listener"/>
+  <route route_type="admin" route_prefix="communication" controller="XF:Communication" context="communication"/>
+  <route route_type="admin" route_prefix="connected-accounts" format=":str&lt;provider_id&gt;/" controller="XF:ConnectedAccount" context="connectedAccountProviders"/>
+  <route route_type="admin" route_prefix="content" controller="XF:Content" context="content"/>
+  <route route_type="admin" route_prefix="content-types" format=":str&lt;content_type&gt;/:str&lt;field_name&gt;/" controller="XF:ContentType" context="contentTypes"/>
+  <route route_type="admin" route_prefix="cron" format=":str&lt;entry_id&gt;/" controller="XF:CronEntry" context="cronEntries"/>
+  <route route_type="admin" route_prefix="custom-thread-fields" format=":str&lt;field_id&gt;/" controller="XF:ThreadField" context="threadFields"/>
+  <route route_type="admin" route_prefix="custom-user-fields" format=":str&lt;field_id&gt;/" controller="XF:UserField" context="userFields"/>
+  <route route_type="admin" route_prefix="data-portability" controller="XF:DataPortability" context="dataPortability"/>
+  <route route_type="admin" route_prefix="development" controller="XF:Development" context="development"/>
+  <route route_type="admin" route_prefix="feeds" format=":int&lt;feed_id,title&gt;/" controller="XF:Feed" context="rssFeedImporter"/>
+  <route route_type="admin" route_prefix="force-agreement" controller="XF:ForceAgreement" context="help"/>
+  <route route_type="admin" route_prefix="forums" format=":int&lt;node_id,title&gt;/" controller="XF:Forum" context="nodes"/>
+  <route route_type="admin" route_prefix="groups-permissions" controller="XF:GroupAndPermission" context="groupsAndPermissions"/>
+  <route route_type="admin" route_prefix="help-pages" format=":str&lt;page_id&gt;/" controller="XF:HelpPage" context="help"/>
+  <route route_type="admin" route_prefix="import" controller="XF:Import" context="importData"/>
+  <route route_type="admin" route_prefix="index" controller="XF:Index"/>
+  <route route_type="admin" route_prefix="languages" format=":int&lt;language_id,title&gt;/" controller="XF:Language" context="languages"/>
+  <route route_type="admin" route_prefix="link-forums" format=":int&lt;node_id,title&gt;/" controller="XF:LinkForum" context="nodes"/>
+  <route route_type="admin" route_prefix="login" controller="XF:Login"/>
+  <route route_type="admin" route_prefix="logs" controller="XF:Log" context="logs"/>
+  <route route_type="admin" route_prefix="logs" sub_name="admin" format="admin/:int&lt;admin_log_id&gt;/" controller="XF:Log" context="adminLog" action_prefix="admin"/>
+  <route route_type="admin" route_prefix="logs" sub_name="image-proxy" format="image-proxy/:int&lt;image_id&gt;/" controller="XF:Log" context="imageProxyLog" action_prefix="ImageProxy"/>
+  <route route_type="admin" route_prefix="logs" sub_name="link-proxy" format="link-proxy/:int&lt;link_id&gt;/" controller="XF:Log" context="linkProxyLog" action_prefix="LinkProxy"/>
+  <route route_type="admin" route_prefix="logs" sub_name="moderator" format="moderator/:int&lt;moderator_log_id&gt;/" controller="XF:Log" context="moderatorLog" action_prefix="moderator"/>
+  <route route_type="admin" route_prefix="logs" sub_name="oembed" format="oembed/:int&lt;oembed_id&gt;" controller="XF:Log" context="oEmbedLog" action_prefix="Oembed"/>
+  <route route_type="admin" route_prefix="logs" sub_name="payment-provider" format="payment-provider/:int&lt;provider_log_id&gt;/" controller="XF:Log" context="paymentProviderLog" action_prefix="paymentProvider"/>
+  <route route_type="admin" route_prefix="logs" sub_name="rejected-users" format="rejected-users/:int&lt;user_id,username&gt;/" controller="XF:Log" context="rejectedUsersLog" action_prefix="rejectedUser"/>
+  <route route_type="admin" route_prefix="logs" sub_name="server-errors" format="server-errors/:int&lt;error_id&gt;/" controller="XF:Log" context="serverErrorLog" action_prefix="serverError"/>
+  <route route_type="admin" route_prefix="logs" sub_name="sitemap" format="sitemap/:int&lt;sitemap_id&gt;/" controller="XF:Log" context="sitemapLog" action_prefix="sitemap"/>
+  <route route_type="admin" route_prefix="logs" sub_name="spam-cleaner" format="spam-cleaner/:int&lt;spam_cleaner_log_id&gt;/" controller="XF:Log" context="spamCleanerLog" action_prefix="spamCleaner"/>
+  <route route_type="admin" route_prefix="logs" sub_name="spam-trigger" format="spam-trigger/:int&lt;trigger_log_id&gt;/" controller="XF:Log" context="spamTriggerLog" action_prefix="spamTrigger"/>
+  <route route_type="admin" route_prefix="member-stats" format=":int&lt;member_stat_id,title&gt;/" controller="XF:MemberStat" context="memberStats"/>
+  <route route_type="admin" route_prefix="moderators" controller="XF:Moderator" context="moderators"/>
+  <route route_type="admin" route_prefix="moderators" sub_name="content" format="content/:int&lt;moderator_id,username&gt;/" controller="XF:Moderator" context="moderators" action_prefix="content"/>
+  <route route_type="admin" route_prefix="moderators" sub_name="super" format="super/:int&lt;user_id,username&gt;/" controller="XF:Moderator" context="moderators" action_prefix="super"/>
+  <route route_type="admin" route_prefix="navigation" format=":str&lt;navigation_id&gt;/" controller="XF:Navigation" context="navigation"/>
+  <route route_type="admin" route_prefix="nodes" format=":int&lt;node_id,title&gt;/" controller="XF:Node" context="nodes"/>
+  <route route_type="admin" route_prefix="notices" format=":int&lt;notice_id,title&gt;/" controller="XF:Notice" context="notices"/>
+  <route route_type="admin" route_prefix="options" format=":str&lt;option_id&gt;/" controller="XF:Option" context="options"/>
+  <route route_type="admin" route_prefix="options" sub_name="groups" format="groups/:str&lt;group_id&gt;/" controller="XF:Option" context="options" action_prefix="Group"/>
+  <route route_type="admin" route_prefix="pages" format=":int&lt;node_id,title&gt;/" controller="XF:Page" context="nodes"/>
+  <route route_type="admin" route_prefix="payment-profiles" format=":int&lt;payment_profile_id,title&gt;/" controller="XF:PaymentProfile" context="paymentProfiles"/>
+  <route route_type="admin" route_prefix="permission-definitions" controller="XF:PermissionDefinition" context="permissionDefinitions"/>
+  <route route_type="admin" route_prefix="permission-definitions" sub_name="interface-groups" format="interface-groups/:str&lt;interface_group_id&gt;/" controller="XF:PermissionDefinition" context="permissionDefinitions" action_prefix="interfaceGroup"/>
+  <route route_type="admin" route_prefix="permission-definitions" sub_name="permissions" format="permissions/:str&lt;permission_group_id&gt;/:str&lt;permission_id&gt;/" controller="XF:PermissionDefinition" context="permissionDefinitions"/>
+  <route route_type="admin" route_prefix="permissions" controller="XF:Permission" context="permissions"/>
+  <route route_type="admin" route_prefix="permissions" sub_name="nodes" format="nodes/:int&lt;node_id,title&gt;/" controller="XF:Permission" context="nodePermissions" action_prefix="node"/>
+  <route route_type="admin" route_prefix="permissions" sub_name="user-groups" format="user-groups/:int&lt;user_group_id,title&gt;/" controller="XF:Permission" context="userGroupPermissions" action_prefix="userGroup"/>
+  <route route_type="admin" route_prefix="permissions" sub_name="users" format="users/:int&lt;user_id,username&gt;/" controller="XF:Permission" context="userPermissions" action_prefix="user"/>
+  <route route_type="admin" route_prefix="phrases" format=":int&lt;phrase_id,title&gt;/" controller="XF:Phrase" context="phrases"/>
+  <route route_type="admin" route_prefix="reactions" format=":int&lt;reaction_id,title&gt;/" controller="XF:Reaction" context="listReactions"/>
+  <route route_type="admin" route_prefix="route-filters" format=":int&lt;route_filter_id&gt;/" controller="XF:RouteFilter" context="routeFilters"/>
+  <route route_type="admin" route_prefix="routes" format=":int&lt;route_id&gt;/" controller="XF:Route" context="routes"/>
+  <route route_type="admin" route_prefix="search" controller="XF:Search"/>
+  <route route_type="admin" route_prefix="setup" controller="XF:Setup" context="setup"/>
+  <route route_type="admin" route_prefix="smilie-categories" format=":int&lt;smilie_category_id&gt;/" controller="XF:SmilieCategory" context="smilies"/>
+  <route route_type="admin" route_prefix="smilies" format=":int&lt;smilie_id,title&gt;/" controller="XF:Smilie" context="smilies"/>
+  <route route_type="admin" route_prefix="stats" controller="XF:Stats" context="stats"/>
+  <route route_type="admin" route_prefix="style-properties" format=":int&lt;property_id,property_name&gt;/" controller="XF:StyleProperty" context="styleProperties"/>
+  <route route_type="admin" route_prefix="style-properties" sub_name="groups" format="groups/:int&lt;property_group_id,group_name&gt;/" controller="XF:StyleProperty" context="styleProperties" action_prefix="Group"/>
+  <route route_type="admin" route_prefix="styles" format=":int&lt;style_id,title&gt;/" controller="XF:Style" context="styles"/>
+  <route route_type="admin" route_prefix="tags" format=":int&lt;tag_id,tag&gt;/" controller="XF:Tag" context="tags"/>
+  <route route_type="admin" route_prefix="template-modifications" format=":int&lt;modification_id&gt;/" controller="XF:TemplateModification" context="templateModifications"/>
+  <route route_type="admin" route_prefix="templates" format=":int&lt;template_id,title&gt;/" controller="XF:Template" context="templates"/>
+  <route route_type="admin" route_prefix="thread-prefixes" format=":int&lt;prefix_id,title&gt;/" controller="XF:ThreadPrefix" context="threadPrefixes"/>
+  <route route_type="admin" route_prefix="thread-prefixes" sub_name="group" format="group/:int&lt;prefix_group_id,title&gt;/" controller="XF:ThreadPrefix" context="threadPrefixes" action_prefix="Group"/>
+  <route route_type="admin" route_prefix="thread-prompts" format=":int&lt;prompt_id,title&gt;/" controller="XF:ThreadPrompt" context="threadPrompts"/>
+  <route route_type="admin" route_prefix="thread-prompts" sub_name="group" format="group/:int&lt;prompt_group_id,title&gt;/" controller="XF:ThreadPrompt" context="threadPrompts" action_prefix="Group"/>
+  <route route_type="admin" route_prefix="threads" controller="XF:Thread" context="forums"/>
+  <route route_type="admin" route_prefix="threads" sub_name="reply-bans" format="reply-bans/:int&lt;thread_reply_ban_id&gt;/" controller="XF:Thread" context="threadReplyBans" action_prefix="replyBans"/>
+  <route route_type="admin" route_prefix="tools" controller="XF:Tools" context="tools"/>
+  <route route_type="admin" route_prefix="tools" sub_name="file-check" format="file-check/:int&lt;check_id&gt;/" controller="XF:Tools" context="fileCheck" action_prefix="fileCheck"/>
+  <route route_type="admin" route_prefix="trophies" format=":int&lt;trophy_id&gt;/" controller="XF:Trophy" context="trophies"/>
+  <route route_type="admin" route_prefix="two-step" format=":str&lt;provider_id&gt;/" controller="XF:TwoStep" context="twoStepProviders"/>
+  <route route_type="admin" route_prefix="user-group-promotions" format=":int&lt;promotion_id,title&gt;/" controller="XF:UserGroupPromotion" context="userGroupPromotions"/>
+  <route route_type="admin" route_prefix="user-groups" format=":int&lt;user_group_id,title&gt;/" controller="XF:UserGroup" context="userGroups"/>
+  <route route_type="admin" route_prefix="user-title-ladder" controller="XF:UserTitleLadder" context="userTitleLadder"/>
+  <route route_type="admin" route_prefix="user-upgrades" format=":int&lt;user_upgrade_id,title&gt;/" controller="XF:UserUpgrade" context="userUpgrades"/>
+  <route route_type="admin" route_prefix="users" format=":int&lt;user_id,username&gt;/" controller="XF:User" context="users"/>
+  <route route_type="admin" route_prefix="warnings" format=":int&lt;warning_definition_id&gt;/" controller="XF:Warning" context="userWarnings"/>
+  <route route_type="admin" route_prefix="warnings" sub_name="actions" format="actions/:int&lt;warning_action_id&gt;/" controller="XF:Warning" context="userWarnings" action_prefix="action"/>
+  <route route_type="admin" route_prefix="widgets" format=":int&lt;widget_id,title&gt;/" controller="XF:Widget" context="widgets"/>
+  <route route_type="admin" route_prefix="widgets" sub_name="definitions" format="definitions/:str&lt;definition_id&gt;/" controller="XF:Widget" context="widgetDefinitions" action_prefix="definition"/>
+  <route route_type="admin" route_prefix="widgets" sub_name="positions" format="positions/:str&lt;position_id&gt;/" controller="XF:Widget" context="widgetPositions" action_prefix="position"/>
+  <route route_type="api" route_prefix="attachments" controller="XF:Attachments"/>
+  <route route_type="api" route_prefix="attachments" sub_name="-" format=":+int&lt;attachment_id&gt;/" controller="XF:Attachment"/>
+  <route route_type="api" route_prefix="auth" controller="XF:Auth"/>
+  <route route_type="api" route_prefix="conversation-messages" controller="XF:ConversationMessages"/>
+  <route route_type="api" route_prefix="conversation-messages" sub_name="-" format=":+int&lt;message_id&gt;/" controller="XF:ConversationMessage"/>
+  <route route_type="api" route_prefix="conversations" controller="XF:Conversations"/>
+  <route route_type="api" route_prefix="conversations" sub_name="-" format=":+int&lt;conversation_id&gt;/" controller="XF:Conversation"/>
+  <route route_type="api" route_prefix="forums" sub_name="-" format=":+int&lt;node_id&gt;/" controller="XF:Forum"/>
+  <route route_type="api" route_prefix="index" controller="XF:Index"/>
+  <route route_type="api" route_prefix="me" controller="XF:Me"/>
+  <route route_type="api" route_prefix="nodes" controller="XF:Nodes"/>
+  <route route_type="api" route_prefix="nodes" sub_name="-" format=":+int&lt;node_id&gt;/" controller="XF:Node"/>
+  <route route_type="api" route_prefix="posts" controller="XF:Posts"/>
+  <route route_type="api" route_prefix="posts" sub_name="-" format=":+int&lt;post_id&gt;/" controller="XF:Post"/>
+  <route route_type="api" route_prefix="profile-post-comments" controller="XF:ProfilePostComments"/>
+  <route route_type="api" route_prefix="profile-post-comments" sub_name="-" format=":+int&lt;profile_post_comment_id&gt;/" controller="XF:ProfilePostComment"/>
+  <route route_type="api" route_prefix="profile-posts" controller="XF:ProfilePosts"/>
+  <route route_type="api" route_prefix="profile-posts" sub_name="-" format=":+int&lt;profile_post_id&gt;/" controller="XF:ProfilePost"/>
+  <route route_type="api" route_prefix="threads" controller="XF:Threads"/>
+  <route route_type="api" route_prefix="threads" sub_name="-" format=":+int&lt;thread_id&gt;/" controller="XF:Thread"/>
+  <route route_type="api" route_prefix="users" controller="XF:Users"/>
+  <route route_type="api" route_prefix="users" sub_name="-" format=":+int&lt;user_id&gt;/" controller="XF:User"/>
+  <route route_type="public" route_prefix="account" controller="XF:Account" context="account"/>
+  <route route_type="public" route_prefix="account" sub_name="connected-accounts" format="connected-accounts/:str&lt;provider_id&gt;/" controller="XF:Account" context="account" action_prefix="connectedAccount"/>
+  <route route_type="public" route_prefix="account" sub_name="two-step" format="two-step/:str&lt;provider_id&gt;/" controller="XF:Account" action_prefix="TwoStep"/>
+  <route route_type="public" route_prefix="account-confirmation" format=":int&lt;user_id,username&gt;/" controller="XF:AccountConfirmation"/>
+  <route route_type="public" route_prefix="approval-queue" controller="XF:ApprovalQueue"/>
+  <route route_type="public" route_prefix="attachments" format=":int&lt;attachment_id,filename&gt;/" controller="XF:Attachment"/>
+  <route route_type="public" route_prefix="categories" format=":int&lt;node_id,title&gt;/" build_class="XF\Pub\Route\Category" build_method="build" controller="XF:Category" context="forums"/>
+  <route route_type="public" route_prefix="conversations" format=":int&lt;conversation_id,title&gt;/:page" controller="XF:Conversation" context="conversations"/>
+  <route route_type="public" route_prefix="conversations" sub_name="messages" format="messages/:int&lt;message_id&gt;/" controller="XF:Conversation" context="conversations" action_prefix="messages"/>
+  <route route_type="public" route_prefix="edit-history" format=":int&lt;edit_history_id&gt;/" controller="XF:EditHistory"/>
+  <route route_type="public" route_prefix="editor" controller="XF:Editor"/>
+  <route route_type="public" route_prefix="email-stop" format=":+int&lt;user_id&gt;/" build_class="XF\Pub\Route\EmailStop" build_method="build" controller="XF:EmailStop"/>
+  <route route_type="public" route_prefix="find-new" format=":any&lt;path&gt;" controller="XF:FindNew"/>
+  <route route_type="public" route_prefix="find-threads" controller="XF:FindThreads"/>
+  <route route_type="public" route_prefix="forums" format=":str_int&lt;node_name,node_id,title&gt;/:page" controller="XF:Forum" context="forums"/>
+  <route route_type="public" route_prefix="forums" sub_name="new-posts" format="-/new-posts" controller="XF:Forum" context="forums" action_prefix="newPosts"/>
+  <route route_type="public" route_prefix="goto" controller="XF:GotoPage"/>
+  <route route_type="public" route_prefix="help" format=":any&lt;page_name&gt;/" controller="XF:Help" context="help"/>
+  <route route_type="public" route_prefix="index" controller="XF:Index"/>
+  <route route_type="public" route_prefix="inline-mod" controller="XF:InlineMod"/>
+  <route route_type="public" route_prefix="link-forums" format=":int&lt;node_id,title&gt;/" controller="XF:LinkForum" context="forums"/>
+  <route route_type="public" route_prefix="login" controller="XF:Login"/>
+  <route route_type="public" route_prefix="logout" controller="XF:Logout"/>
+  <route route_type="public" route_prefix="lost-password" format=":int&lt;user_id,username&gt;/" controller="XF:LostPassword"/>
+  <route route_type="public" route_prefix="members" format=":int&lt;user_id,username&gt;/:page" controller="XF:Member" context="members"/>
+  <route route_type="public" route_prefix="members" sub_name="followers" format=":int&lt;user_id,username&gt;/followers/:page" controller="XF:Member" context="members" action_prefix="followers"/>
+  <route route_type="public" route_prefix="members" sub_name="following" format=":int&lt;user_id,username&gt;/following/:page" controller="XF:Member" context="members" action_prefix="following"/>
+  <route route_type="public" route_prefix="members" sub_name="list" format="list/" controller="XF:Member" context="members" action_prefix="list"/>
+  <route route_type="public" route_prefix="misc" controller="XF:Misc"/>
+  <route route_type="public" route_prefix="online" controller="XF:Online" context="members"/>
+  <route route_type="public" route_prefix="pages" format=":str&lt;node_name&gt;/" controller="XF:Page" context="forums"/>
+  <route route_type="public" route_prefix="posts" format=":int&lt;post_id&gt;/" controller="XF:Post" context="forums"/>
+  <route route_type="public" route_prefix="profile-posts" format=":int&lt;profile_post_id&gt;/" controller="XF:ProfilePost" context="members"/>
+  <route route_type="public" route_prefix="profile-posts" sub_name="comments" format="comments/:int&lt;profile_post_comment_id&gt;/" controller="XF:ProfilePost" context="members" action_prefix="Comments"/>
+  <route route_type="public" route_prefix="purchase" format=":str&lt;purchasable_type_id&gt;/" controller="XF:Purchase"/>
+  <route route_type="public" route_prefix="recent-activity" controller="XF:RecentActivity" context="members"/>
+  <route route_type="public" route_prefix="register" controller="XF:Register"/>
+  <route route_type="public" route_prefix="register" sub_name="connected-accounts" format="connected-accounts/:str&lt;provider_id&gt;/" controller="XF:Register" action_prefix="connectedAccount"/>
+  <route route_type="public" route_prefix="reports" format=":int&lt;report_id&gt;/" controller="XF:Report"/>
+  <route route_type="public" route_prefix="search" format=":int&lt;search_id&gt;/" build_class="XF\Pub\Route\Search" build_method="build" controller="XF:Search"/>
+  <route route_type="public" route_prefix="spam-cleaner" format=":int&lt;user_id,username&gt;/" build_class="XF\Pub\Route\SpamCleaner" build_method="build" controller="XF:SpamCleaner"/>
+  <route route_type="public" route_prefix="tags" format=":str&lt;tag_url&gt;/:page" controller="XF:Tag"/>
+  <route route_type="public" route_prefix="threads" format=":int&lt;thread_id,title&gt;/:page" controller="XF:Thread" context="forums"/>
+  <route route_type="public" route_prefix="threads" sub_name="post" format=":+int&lt;thread_id,title&gt;/post-:+int_p&lt;post_id&gt;" controller="XF:Thread" context="forums" action_prefix="post"/>
+  <route route_type="public" route_prefix="warnings" format=":int&lt;warning_id&gt;/" controller="XF:Warning" context="members"/>
+  <route route_type="public" route_prefix="watched" controller="XF:Watched"/>
+  <route route_type="public" route_prefix="whats-new" controller="XF:WhatsNew" context="whatsNew"/>
+  <route route_type="public" route_prefix="whats-new" sub_name="posts" format="posts/:int&lt;find_new_id&gt;/:page" controller="XF:WhatsNewPost" context="forums"/>
+  <route route_type="public" route_prefix="whats-new" sub_name="profile-posts" format="profile-posts/:int&lt;find_new_id&gt;/:page" controller="XF:WhatsNewProfilePost" context="members"/>
+</routes>

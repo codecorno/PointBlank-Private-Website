@@ -1,0 +1,115 @@
+<?php
+
+namespace XF\Data;
+
+class TimeZone
+{
+	public function getTimeZoneOptions()
+	{
+		$output = [];
+		foreach ($this->getTimeZoneData() AS $id => $info)
+		{
+			$output[$id] = \XF::phrase($info['phrase']);
+		}
+		return $output;
+	}
+
+	public function getTimeZoneData()
+	{
+		return [
+			'Pacific/Midway' => ['phrase' => 'utc_1100_american_samoa'],
+			'Pacific/Honolulu' => ['phrase' => 'utc_1000_hawaii'],
+			'Pacific/Marquesas' => ['phrase' => 'utc_0930_marquesas_islands'],
+			'America/Anchorage' => ['phrase' => 'utc_0900_alaska'],
+			'America/Los_Angeles' => ['phrase' => 'utc_0800_pacific_time'],
+			'America/Santa_Isabel' => ['phrase' => 'utc_0800_baja_california'],
+			'America/Tijuana' => ['phrase' => 'utc_0800_tijuana'],
+			'America/Denver' => ['phrase' => 'utc_0700_mountain_time'],
+			'America/Chihuahua' => ['phrase' => 'utc_0700_chihuahua'],
+			'America/Phoenix' => ['phrase' => 'utc_0700_arizona'],
+			'America/Chicago' => ['phrase' => 'utc_0600_central_time'],
+			'America/Belize' => ['phrase' => 'utc_0600_saskatchewan'],
+			'America/Mexico_City' => ['phrase' => 'utc_0600_guadalajara'],
+			'Pacific/Easter' => ['phrase' => 'utc_0600_easter_island'],
+			'America/New_York' => ['phrase' => 'utc_0500_eastern_time'],
+			'America/Havana' => ['phrase' => 'utc_0500_cuba'],
+			'America/Bogota' => ['phrase' => 'utc_0500_bogota'],
+			'America/Caracas' => ['phrase' => 'utc_0430_caracas'],
+			'America/Halifax' => ['phrase' => 'utc_0400_atlantic_time_canada'],
+			'America/Goose_Bay' => ['phrase' => 'utc_0400_atlantic_time_goose_bay'],
+			'America/Asuncion' => ['phrase' => 'utc_0400_asuncion'],
+			'America/Santiago' => ['phrase' => 'utc_0400_santiago'],
+			'America/Cuiaba' => ['phrase' => 'utc_0400_cuiaba'],
+			'America/La_Paz' => ['phrase' => 'utc_0400_georgetown'],
+			'America/St_Johns' => ['phrase' => 'utc_0330_newfoundland'],
+			'America/Argentina/Buenos_Aires' => ['phrase' => 'utc_0300_buenos_aires'],
+			'America/Argentina/San_Luis' => ['phrase' => 'utc_0300_san_luis'],
+			'America/Argentina/Mendoza' => ['phrase' => 'utc_0300_argentina'],
+			'Atlantic/Stanley' => ['phrase' => 'utc_0300_falkland_islands'],
+			'America/Godthab' => ['phrase' => 'utc_0300_greenland'],
+			'America/Montevideo' => ['phrase' => 'utc_0300_montevideo'],
+			'America/Sao_Paulo' => ['phrase' => 'utc_0300_brasilia'],
+			'America/Miquelon' => ['phrase' => 'utc_0300_miquelon'],
+			'America/Noronha' => ['phrase' => 'utc_0200_mid_atlantic'],
+			'Atlantic/Cape_Verde' => ['phrase' => 'utc_0100_cape_verde'],
+			'Atlantic/Azores' => ['phrase' => 'utc_0100_azores'],
+			'Europe/London' => ['phrase' => 'utc_dublin'],
+			'Africa/Casablanca' => ['phrase' => 'utc_casablanca'],
+			'Atlantic/Reykjavik' => ['phrase' => 'utc_monrovia'],
+			'Europe/Amsterdam' => ['phrase' => 'utc_plus_0100_central_european_time'],
+			'Africa/Algiers' => ['phrase' => 'utc_plus_0100_west_central_africa'],
+			'Africa/Windhoek' => ['phrase' => 'utc_plus_0100_windhoek'],
+			'Africa/Tunis' => ['phrase' => 'utc_plus_0100_tunis'],
+			'Europe/Athens' => ['phrase' => 'utc_plus_0200_eastern_european_time'],
+			'Africa/Johannesburg' => ['phrase' => 'utc_plus_0200_south_africa_standard_time'],
+			'Europe/Kaliningrad' => ['phrase' => 'utc_plus_0200_kaliningrad'],
+			'Asia/Amman' => ['phrase' => 'utc_plus_0200_amman'],
+			'Asia/Beirut' => ['phrase' => 'utc_plus_0200_beirut'],
+			'Africa/Cairo' => ['phrase' => 'utc_plus_0200_cairo'],
+			'Asia/Jerusalem' => ['phrase' => 'utc_plus_0200_jerusalem'],
+			'Asia/Gaza' => ['phrase' => 'utc_plus_0200_gaza'],
+			'Asia/Damascus' => ['phrase' => 'utc_plus_0200_syria'],
+			'Europe/Moscow' => ['phrase' => 'utc_plus_0300_moscow'],
+			'Europe/Minsk' => ['phrase' => 'utc_plus_0300_minsk'],
+			'Africa/Nairobi' => ['phrase' => 'utc_plus_0300_baghdad'],
+			'Asia/Tehran' => ['phrase' => 'utc_plus_0330_tehran'],
+			'Asia/Dubai' => ['phrase' => 'utc_plus_0400_abu_dhabi'],
+			'Asia/Yerevan' => ['phrase' => 'utc_plus_0400_yerevan'],
+			'Asia/Baku' => ['phrase' => 'utc_plus_0400_baku'],
+			'Indian/Mauritius' => ['phrase' => 'utc_plus_0400_mauritius'],
+			'Asia/Kabul' => ['phrase' => 'utc_plus_0430_kabul'],
+			'Asia/Yekaterinburg' => ['phrase' => 'utc_plus_0500_ekaterinburg'],
+			'Asia/Tashkent' => ['phrase' => 'utc_plus_0500_tashkent'],
+			'Asia/Kolkata' => ['phrase' => 'utc_plus_0530_chennai'],
+			'Asia/Kathmandu' => ['phrase' => 'utc_plus_0545_kathmandu'],
+			'Asia/Novosibirsk' => ['phrase' => 'utc_plus_0600_novosibirsk'],
+			'Asia/Dhaka' => ['phrase' => 'utc_plus_0600_astana'],
+			'Asia/Almaty' => ['phrase' => 'utc_plus_0600_almaty'],
+			'Asia/Yangon' => ['phrase' => 'utc_plus_0630_yangon'],
+			'Asia/Krasnoyarsk' => ['phrase' => 'utc_plus_0700_krasnoyarsk'],
+			'Asia/Bangkok' => ['phrase' => 'utc_plus_0700_bangkok'],
+			'Asia/Irkutsk' => ['phrase' => 'utc_plus_0800_irkutsk'],
+			'Asia/Hong_Kong' => ['phrase' => 'utc_plus_0800_beijing'],
+			'Asia/Singapore' => ['phrase' => 'utc_plus_0800_kuala_lumpur'],
+			'Australia/Perth' => ['phrase' => 'utc_plus_0800_perth'],
+			'Asia/Yakutsk' => ['phrase' => 'utc_plus_0900_yakutsk'],
+			'Asia/Tokyo' => ['phrase' => 'utc_plus_0900_tokyo'],
+			'Asia/Seoul' => ['phrase' => 'utc_plus_0900_seoul'],
+			'Australia/Adelaide' => ['phrase' => 'utc_plus_0930_adelaide'],
+			'Australia/Darwin' => ['phrase' => 'utc_plus_0930_darwin'],
+			'Asia/Vladivostok' => ['phrase' => 'utc_plus_1000_vladivostok'],
+			'Asia/Magadan' => ['phrase' => 'utc_plus_1000_magadan'],
+			'Australia/Brisbane' => ['phrase' => 'utc_plus_1000_brisbane'],
+			'Australia/Sydney' => ['phrase' => 'utc_plus_1000_sydney'],
+			'Pacific/Noumea' => ['phrase' => 'utc_plus_1100_solomon_is'],
+			'Pacific/Norfolk' => ['phrase' => 'utc_plus_1130_norfolk_island'],
+			'Asia/Anadyr' => ['phrase' => 'utc_plus_1200_anadyr'],
+			'Pacific/Auckland' => ['phrase' => 'utc_plus_1200_auckland'],
+			'Pacific/Fiji' => ['phrase' => 'utc_plus_1200_fiji'],
+			'Pacific/Chatham' => ['phrase' => 'utc_plus_1245_chatham_islands'],
+			'Pacific/Tongatapu' => ['phrase' => 'utc_plus_1300_nukualofa'],
+			'Pacific/Apia' => ['phrase' => 'utc_plus_1300_apia_samoa'],
+			'Pacific/Kiritimati' => ['phrase' => 'utc_plus_1400_kiritimati'],
+		];
+	}
+}

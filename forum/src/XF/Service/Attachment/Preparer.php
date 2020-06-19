@@ -1,0 +1,262 @@
+<?php
+
+namespace XF\Service\Attachment;
+
+use XF\Util\File;
+
+class Preparer extends \XF\Service\AbstractService
+{
+	public function insertAttachment(
+		\XF\Attachment\AbstractHandler $handler, \XF\FileWrapper $file, \XF\Entity\User $user, $hash
+	)
+	{
+		$extra = [];
+
+		$extension = $file->getExtension();
+		if (File::isVideoInlineDisplaySafe($extension))
+		{
+			$extra['file_path'] = 'data://video/%FLOOR%/%DATA_ID%-%HASH%.mp4';
+		}
+
+		$handler->beforeNewAttachment($file, $extra);
+
+		$data = $this->insertDataFromFile($file, $user->user_id, $extra);
+		return $this->insertTemporaryAttachment($handler, $data, $hash, $file);
+	}
+
+	public function insertDataFromFile(\XF\FileWrapper $file, $userId, array $extra = [])
+	{
+		$extra = array_replace([
+			'file_path' => '',
+			'upload_date' => null
+		], $extra);
+
+		$sourceFile = $file->getFilePath();
+		$width = $file->getImageWidth();
+		$height = $file->getImageHeight();
+
+		/** @var \XF\Entity\AttachmentData $data */
+		$data = $this->app->em()->create('XF:AttachmentData');
+		$data->user_id = $userId;
+		$data->set('filename', $file->getFileName(), ['forceConstraint' => true]);
+		$data->file_size = $file->getFileSize();
+		$data->file_hash = md5_file($sourceFile);
+		$data->file_path = $extra['file_path'];
+		$data->width = $width;
+		$data->height = $height;
+
+		if ($extra['upload_date'])
+		{
+			$data->upload_date = $extra['upload_date'];
+		}
+
+		if (!$data->preSave())
+		{
+			throw new \XF\PrintableException($data->getErrors());
+		}
+
+		if ($width && $height && $this->app->imageManager()->canResize($width, $height))
+		{
+			$tempThumbFile = $this->generateAttachmentThumbnail($sourceFile, $thumbWidth, $thumbHeight);
+			if ($tempThumbFile)
+			{
+				$data->set('thumbnail_width', $thumbWidth, ['forceSet' => true]);
+				$data->set('thumbnail_height', $thumbHeight, ['forceSet' => true]);
+			}
+		}
+		else
+		{
+			$tempThumbFile = null;
+		}
+
+		$this->db()->beginTransaction();
+
+		$data->save(true, false);
+
+		$dataPath = $data->getAbstractedDataPath();
+		$thumbnailPath = $data->getAbstractedThumbnailPath();
+
+		// if one of the writes fail, remove the data record
+		try
+		{
+			\XF\Util\File::copyFileToAbstractedPath($sourceFile, $dataPath);
+
+			if ($tempThumbFile)
+			{
+				\XF\Util\File::copyFileToAbstractedPath($tempThumbFile, $thumbnailPath);
+			}
+		}
+		catch (\Exception $e)
+		{
+			$this->db()->rollback();
+			$this->app->em()->detachEntity($data);
+
+			\XF\Util\File::deleteFromAbstractedPath($dataPath);
+
+			if ($tempThumbFile)
+			{
+				\XF\Util\File::deleteFromAbstractedPath($thumbnailPath);
+				@unlink($tempThumbFile);
+			}
+
+			throw $e;
+		}
+
+		$this->db()->commit();
+
+		return $data;
+	}
+
+	public function updateDataFromFile(\XF\Entity\AttachmentData $data, \XF\FileWrapper $file, array $extra = [])
+	{
+		$sourceFile = $file->getFilePath();
+		$width = $file->getImageWidth();
+		$height = $file->getImageHeight();
+
+		if (isset($extra['file_path']))
+		{
+			$data->file_path = $extra['file_path'];
+		}
+		$data->file_size = $file->getFileSize();
+		$data->file_hash = md5_file($sourceFile);
+		$data->width = $width;
+		$data->height = $height;
+
+		if (!$data->preSave())
+		{
+			throw new \XF\PrintableException($data->getErrors());
+		}
+
+		$tempThumbFile = false;
+		if ($data->isChanged('file_hash'))
+		{
+			if ($width && $height && $this->app->imageManager()->canResize($width, $height))
+			{
+				$tempThumbFile = $this->generateAttachmentThumbnail($sourceFile, $thumbWidth, $thumbHeight);
+				if ($tempThumbFile)
+				{
+					$data->set('thumbnail_width', $thumbWidth, ['forceSet' => true]);
+					$data->set('thumbnail_height', $thumbHeight, ['forceSet' => true]);
+				}
+			}
+		}
+
+		$this->db()->beginTransaction();
+
+		$previousDataPath = null;
+		$previousThumbnailPath = null;
+
+		$fileIsChanged = $data->isChanged(['file_hash', 'file_path']);
+		if ($fileIsChanged)
+		{
+			$previousDataPath = $data->getExistingAbstractedDataPath();
+			$previousThumbnailPath = $data->getExistingAbstractedThumbnailPath();
+		}
+
+		$data->saveIfChanged($dataChanged, true, false);
+
+		if ($fileIsChanged && $dataChanged)
+		{
+			$dataPath = $data->getAbstractedDataPath();
+			$thumbnailPath = $data->getAbstractedThumbnailPath();
+
+			try
+			{
+				File::copyFileToAbstractedPath($sourceFile, $dataPath);
+
+				if ($tempThumbFile)
+				{
+					File::copyFileToAbstractedPath($tempThumbFile, $thumbnailPath);
+				}
+			}
+			catch (\Exception $e)
+			{
+				$this->db()->rollback();
+				$this->app->em()->detachEntity($data);
+
+				throw $e;
+			}
+
+			File::deleteFromAbstractedPath($previousDataPath);
+			File::deleteFromAbstractedPath($previousThumbnailPath);
+		}
+
+		$this->db()->commit();
+
+		return $data;
+	}
+
+	public function generateAttachmentThumbnail($sourceFile, &$width = null, &$height = null)
+	{
+		$image = $this->app->imageManager()->imageFromFile($sourceFile);
+		if (!$image)
+		{
+			return null;
+		}
+
+		// Core thumbnails will always be the size.
+		// Content specific thumbs can be generated by handlers using onAttachment.
+		$thumbSize = $this->app->options()->attachmentThumbnailDimensions;
+
+		$image->resize($thumbSize);
+
+		$newTempFile = File::getTempFile();
+		if ($newTempFile && $image->save($newTempFile))
+		{
+			$width = $image->getWidth();
+			$height = $image->getHeight();
+
+			return $newTempFile;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	public function insertTemporaryAttachment(
+		\XF\Attachment\AbstractHandler $handler,
+		\XF\Entity\AttachmentData $data,
+		$tempHash,
+		\XF\FileWrapper $file
+	)
+	{
+		/** @var \XF\Entity\Attachment $attachment */
+		$attachment = $this->app->em()->create('XF:Attachment');
+
+		$attachment->data_id = $data->data_id;
+		$attachment->content_type = $handler->getContentType();
+		$attachment->temp_hash = $tempHash;
+		$attachment->save();
+
+		$handler->onNewAttachment($attachment, $file);
+
+		return $attachment;
+	}
+
+	public function associateAttachmentsWithContent($tempHash, $contentType, $contentId)
+	{
+		$associated = 0;
+
+		$attachmentFinder = $this->finder('XF:Attachment')
+			->where('temp_hash', $tempHash);
+
+		/** @var \XF\Entity\Attachment $attachment */
+		foreach ($attachmentFinder->fetch() AS $attachment)
+		{
+			$attachment->content_type = $contentType;
+			$attachment->content_id = $contentId;
+			$attachment->temp_hash = '';
+			$attachment->unassociated = 0;
+
+			$attachment->save();
+
+			$container = $attachment->getContainer();
+			$attachment->getHandler()->onAssociation($attachment, $container);
+
+			$associated++;
+		}
+
+		return $associated;
+	}
+}

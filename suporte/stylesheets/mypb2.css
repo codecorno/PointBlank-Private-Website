@@ -1,0 +1,101 @@
+ul.cntBbsRow {
+	list-style-type: none;
+    position: relative;
+    margin: 0px 0px 0px 0px;
+    width: 448px;
+    border-bottom: 1px solid #EAEEF1;
+    padding: 5px 0px 3px 0px;
+    background-color: #F9FAFC;
+}
+ul.cntBbsRow.noBdr {
+    border: none;
+}
+
+.icoEventos {background:url(../images/ico_evento.png) 0px  no-repeat;min-height:16px;_height:auto !important;_height:16px;}
+.icoNoticias {background:url(../images/ico_noticia.png) 0px no-repeat;min-height:16px;_height:auto !important;_height:16px;}
+.icoAtualizacao {background:url(../images/ico_atualizoes.png) 0px no-repeat;min-height:16px;_height:auto !important;_height:16px;}
+
+ul.cntBbsRow li div.cell1 {
+    position: relative;
+    float: left;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    width: 73px;
+    height: 18px;
+	margin-top: -1px;
+}
+
+ul.cntBbsRow li div.cell2 {
+    position: relative;
+    float: right;
+    margin: 5px 0px 0px 5px;
+    width: 100px;
+    text-align: right;
+    overflow: hidden;
+    height: 15px;
+    font: normal 13px verdana;
+    color: #797979;
+    line-height: 16px;
+}
+
+ul.cntBbsRow li div.info {
+    font-size: 15px;
+}
+
+.resultado_validacao .ico {
+    height: 16px;
+    width: 16px;
+    float: left;
+    margin-right: 5px;
+}
+
+.resultado_validacao .ico.sucesso {
+    background: url(../images/i_ok.png);
+}
+
+.resultado_validacao .ico.erro {
+    background: url(../images/i_error.png);
+}
+
+.resultado_validacao .ico.atencao {
+    background: url(../images/i_warning.png);
+}
+
+.resultado_validacao p {
+    float: left;
+    margin: 1px 0 0 0 !important;
+	color: #000 !important;
+}
+
+.resultado_validacao .tente_novamente {
+    float: left;
+    clear: both;
+    padding: 5px 0;
+}
+
+.resultado_validacao {
+    float: left;
+    padding: 15px 0px 0px 0px;
+}
+
+.resultado_validacao .loader {
+    background-image: url(http://imagem.ongame.com.br/site_novo/global/loja/loader.gif);
+    float: left;
+    width: 220px;
+    height: 19px;
+    margin: 5px 0 0 -7px;
+    clear: both;
+}
+
+.suporte_top{
+	padding: 0px 0px 13px 0px;
+    border-bottom: 1px solid #000;
+    width: 967px;
+    margin: 0px 0px 0px 15px;
+}
+
+.suporte_top_botao{
+	float: right;
+	margin-top: -8px;
+}

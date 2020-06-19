@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<api_scopes>
+  <api_scope api_scope_id="attachment:delete"/>
+  <api_scope api_scope_id="attachment:read"/>
+  <api_scope api_scope_id="attachment:write"/>
+  <api_scope api_scope_id="auth"/>
+  <api_scope api_scope_id="conversation:read"/>
+  <api_scope api_scope_id="conversation:write"/>
+  <api_scope api_scope_id="node:delete"/>
+  <api_scope api_scope_id="node:read"/>
+  <api_scope api_scope_id="node:write"/>
+  <api_scope api_scope_id="profile_post:delete_hard"/>
+  <api_scope api_scope_id="profile_post:read"/>
+  <api_scope api_scope_id="profile_post:write"/>
+  <api_scope api_scope_id="thread:delete_hard"/>
+  <api_scope api_scope_id="thread:read"/>
+  <api_scope api_scope_id="thread:write"/>
+  <api_scope api_scope_id="user:delete"/>
+  <api_scope api_scope_id="user:read"/>
+  <api_scope api_scope_id="user:write"/>
+</api_scopes>
