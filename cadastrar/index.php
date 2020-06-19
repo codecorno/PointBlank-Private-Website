@@ -73,10 +73,7 @@
 								Registrar
 							</button>
 						</div>
-						<a href="../login/" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
-							Fazer login
-							<i class="fa fa-long-arrow-right m-l-5"></i>
-						</a>
+
 					</div>
 				</form>
 			</div>
@@ -144,13 +141,6 @@
        
     </script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="vendor/select2/select2.min.js"></script>
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<script src="js/main.js"></script>
 
 </body>
