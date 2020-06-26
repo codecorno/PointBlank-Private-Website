@@ -13,14 +13,14 @@ $result1 = pg_query("SELECT * FROM accounts WHERE online='t'");
 $num_rows1 = pg_num_rows($result1);
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html dir="ltr">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>AzurePB - Point Blank Private Server</title>
-    <link href="http://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="stylesheets/main.css" />
     <link rel="stylesheet" href="stylesheets/devices.css" />
     <link rel="stylesheet" href="stylesheets/post.css" />
@@ -36,13 +36,13 @@ $num_rows1 = pg_num_rows($result1);
     <script type="text/javascript" src="stylesheets/javascript/jquery.min.js"></script>
     <link type="text/css" href="stylesheets/mypb2.css" rel="stylesheet" />
     <script type="text/javascript" src="stylesheets/javascript/mypb.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Open Sans:400,300,700' rel='stylesheet' type='text/css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
     </script>
 </head>
 
-<body>
+<body style="background-color: #485461;
+background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
     <div id="footer_image">
         <div id="main_wrapper">
             <div id="logo"> <a href="index.php"><img alt="alt_example" style="margin-left: 25%;margin-bottom:-5%" src="img/Logo-topo.png" /></a>
