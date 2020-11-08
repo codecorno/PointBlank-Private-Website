@@ -294,6 +294,22 @@ span.blue {
 #menu_right{
 	background:url(../images/menu_right.jpg) top left no-repeat;
 }
+ul#menu{
+	height:66px;
+	width:956px;
+	float:left;
+	background:url(../images/menu_loop.jpg) top left repeat;
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+ul#menu li{
+	float:left;
+	height:66px;
+	padding:0px 2px 0px 0px;
+	background:url(../images/menu_divider.jpg) top right no-repeat;
+	
+}
 ul#menu li a{
 	font-family: 'Oswald', Helvetica, Arial, sans-serif;
 	font-weight:700;

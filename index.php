@@ -14,7 +14,7 @@ $num_rows1 = pg_num_rows($result1);
 
 ?>
 <!DOCTYPE html>
-<html>
+<html dir="ltr">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,63 +37,56 @@ $num_rows1 = pg_num_rows($result1);
     <link type="text/css" href="stylesheets/mypb2.css" rel="stylesheet" />
     <script type="text/javascript" src="stylesheets/javascript/mypb.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
     </script>
 </head>
 
-<body style="background-color: #485461;background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img alt="Logo do servidor" style="width:25%" src="img/Logo-topo.png" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-left:15%;margin-top:-1%">
-                <ul class="navbar-nav" id="menu">
-                    <li class="nav-item"><a href="index.php">Home</a></li>
-                    <li class="nav-item"><a href="/forum">Fórum</a></li>
-
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownRanking" role="button" data-toggle="dropdown" aria-expanded="false">
-                            Ranking
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownRanking">
-                            <li><a class="dropdown-item" href="?pg=ranking">Players</a></li>
-                            <li><a class="dropdown-item" href="?pg=clan">Clans</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="?pg=downloads">Downloads</a></li>
-                    <?php if (isset($_SESSION['username'])) { ?>
-                        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-            Minha conta
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="?pg=perfil">Perfil</a></li>
-            <li><a class="dropdown-item" href="?pg=changepw">Trocar senha</a></li>
-            <li><a class="dropdown-item" href="?pg=changeemail">Trocar email</a></li>
-            <li><a class="dropdown-item" href="./suporte">Suporte</a></li>
-          </ul>
-        </li>
-                    <?php } else { ?>
-                        <li><a href="./cadastrar">Cadastrar</a></li>
-                    <?php } ?>
-
-                </ul>
-                </li>
-
-            </div>
-        </div>
-    </nav>
+<body style="background-color: #485461;
+background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);">
     <div id="footer_image">
         <div id="main_wrapper">
-            <div id="logo"> <a href="index.php"></a>
+            <div id="logo"> <a href="index.php"><img alt="alt_example" style="margin-left: 25%;margin-bottom:-5%" src="img/Logo-topo.png" /></a>
                 <div id="social_ctn">
                 </div>
             </div>
             <div id="main_in">
-
+                <div id="menu_wrapper">
+                    <div id="menu_left"></div>
+                    <ul id="menu">
+                        <li><a href="index.php">Home</a></li>
+						<li><a href="/forum">Fórum</a></li>
+                        <li><a href="?pg=ranking">Ranking</a>
+                            <ul>
+                                <li><a href="?pg=ranking">Ranking players</a></li>
+                                <li class="drop_last"><a href="?pg=clan">Ranking Clan</a></li>
+                            </ul>
+                        </li>
+                        <?php if (isset($_SESSION['username'])) { ?>
+                            <li><a href="?pg=downloads">Downloads</a></li>
+                            <li><a href="?pg=perfil">Painel do player</a>
+                                <ul>
+                                    <li><a href="?pg=changepw">Trocar Senha</a></li>
+                                    <li><a href="?pg=changemail">Trocar Email</a></li>
+                                    <li class="drop_last"><a href="./suporte">Suporte</a></li>
+                                    
+                                </ul>
+                            </li>
+                            
+                        <?php } else { ?>
+                            <li><a href="?pg=downloads">Downloads</a></li>
+                            <li><a href="./cadastrar">Cadastrar</a></li>
+                        <?php } ?>
+                        
+                        <li><a href="#">Regras</a>
+                            <ul>
+                                <li><a href="?pg=camp">Camp Regras</a></li>
+                                <li class="drop_last"><a href="?pg=regras">Regras Gerais</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" id="pull">Menu</a>
+                    <div id="menu_right"></div>
+                </div>
 
                 <?php
                 function limitarTexto($texto, $limite)
@@ -166,11 +159,11 @@ $num_rows1 = pg_num_rows($result1);
                                     <div class="header">Login</div>
                                     <div id="search">
                                         <form action="login.php" method="post">
-                                            <input id="login" name="username" type="text" required="" class="id off" placeholder="Informe seu login" maxlength="16" onfocus="this.className='id off';if(this.value=='usuario'){this.value='';}">
+                                          <input id="login" name="username" type="text" required="" class="id off" placeholder="Informe seu login" maxlength="16" onfocus="this.className='id off';if(this.value=='usuario'){this.value='';}">
                                             <input id="pass" name="password" type="password" required="" class="id off" placeholder="Digite sua senha" maxlength="16" onfocus="this.className='id off';if(this.value=='senha'){this.value='';}">
-                                            <br>
+                                           <br>
 
-                                            <span><a id="cop_text2" href="recuperar.php" style="padding-left: 18px;">Esqueci minha senha</a></span><br />
+											<span><a id="cop_text2" href="recuperar.php" style="padding-left: 18px;">Esqueci minha senha</a></span><br />
                                             <button style="margin-left: 230px;margin-top: -93px;margin-bottom: 31px;width: 80px;height: 74px;" type="submit" name="submit" class="read_more2">Logar</button>
                                         </form>
                                     </div>
@@ -187,16 +180,14 @@ $num_rows1 = pg_num_rows($result1);
                                     <ul class="blockLogin2S1">
 
                                         <li style="margin-top: 6px;">
-                                            <span><?php if (isset($ranking)) {
-                                                        echo "<img src='Ranking/PAT/" . $ranking['rank'] . ".gif' width='20' />";
-                                                    } ?></span>
+                                            <span><?php if (isset($ranking)){ echo "<img src='Ranking/PAT/" . $ranking['rank'] . ".gif' width='20' />"; }?></span>
                                             <span style="font-family: monospace;vertical-align: super;margin-left: 5px;font-size: 14px;color: rgb(255, 255, 255);margin-bottom:-20px;"><?php echo "" . $ranking['player_name'] . ""; ?>
                                                 <span style="margin-left: 75px;"><br>
-
+                                                
                                                     <a href="logout.php" target="_self" style="text-decoration: none;"><button style="margin: -24px 0px 2px  170px;width: 74px;margin-left:69%;margin-top:-20px;" class="read_more">Sair</button></a>
                                                     <?php if ($ranking['rank'] > 52) { ?>
-                                                        <a href="/painel_de_adm/" target="_self" style="text-decoration: none;"><button style="margin: -24px 0px 2px  170px;width: 74px;margin-top:1px;" class="read_more">Painel de ADM</button></a>
-                                                    <?php } ?>
+                                                    <a href="/painel_de_adm/" target="_self" style="text-decoration: none;"><button style="margin: -24px 0px 2px  170px;width: 74px;margin-top:1px;" class="read_more">Painel de ADM</button></a>
+                        <?php } ?>
                                                 </span>
                                             </span>
                                         </li>
@@ -222,15 +213,15 @@ $num_rows1 = pg_num_rows($result1);
                                             <dt>Conta</dt>
                                             <dd><span style="color:white;"><?php $rank->tipodeconta($ranking['access_level']); ?></span></dd>
                                         </dl>
-                                        <dl class="blockLogin2S2">
+										<dl class="blockLogin2S2">
                                             <dt>Token</dt>
                                             <dd style="text-transform:none">  <a onclick="CopyToken();" style="color:white;"><?php echo $ranking['token']; ?></a></dd>
                                         </dl>
-
+										
                                     </li>
                                 </div>
                             <?php } ?>
-
+                           
                             <div class="normal">
                                 <div class="header">Status do servidor</div>
                                 <li class="blcell3" style="width: 320px;">
@@ -252,8 +243,8 @@ $num_rows1 = pg_num_rows($result1);
                                     </dl>
                                     <dl class="blockLogin2S2" style="width: 320px;">
                                         <dt style="width: 150px;"><img src="img/discord.png" title="Total de players online" width="16"> Discord oficial</dt>
-                                        <dd><span><a href="https://discord.gg/mGR7Zq" target="_blank" style="color:gold;text-decoration: none;"> Clique aqui</a></span></dd>
-                                    </dl>
+                                        <dd><span><a href="https://discord.gg/mGR7Zq" target="_blank"  style="color:gold;text-decoration: none;"> Clique aqui</a></span></dd>
+                                    </dl>                                    
                                     <br><br><br>Evento de Bônus por partida
                                     <dl class="blockLogin2S2" style="width: 320px;">
                                         <dt style="width: 150px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Star_icon_stylized.svg/1077px-Star_icon_stylized.svg.png" title="Bônus de experiência dado por partida" width="16"> Bônus Exp</dt>
@@ -264,14 +255,14 @@ $num_rows1 = pg_num_rows($result1);
                                         <dt style="width: 150px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Star_icon_stylized.svg/1077px-Star_icon_stylized.svg.png" title="Bônus de gold dado por partida" width="16"> Bônus Gold</dt>
                                         <dd><span style="color:white;"> 300%</span></dd>
                                     </dl>
-
+                                    
 
 
                                     <!-- *************** PHP RankUP *************** -->
 
                                 </li>
                             </div>
-
+                            
                             <div class="normal">
 
                                 <div class="header">Jogue agora</div>
@@ -290,7 +281,7 @@ $num_rows1 = pg_num_rows($result1);
                     <div class="footer_widget">
                         <div class="header"><a href="#">SOBRE NÓS</a></div>
                         <div class="body">
-                            O AzurePB surgiu por volta de 2017 em um projeto entre 2 amigos, o servidor no meio do caminho foi descontinuado e agora estamos de volta.</p>
+                                O AzurePB surgiu por volta de 2017 em um projeto entre 2 amigos, o servidor no meio do caminho foi descontinuado e agora estamos de volta.</p>
                             <img alt="alt_example" src="img/Logo-topo.png" style="margin:8px 0px 0px 55px;width:214px;" />
                         </div>
                     </div>
@@ -384,8 +375,6 @@ $num_rows1 = pg_num_rows($result1);
     <script src="stylesheets/javascript/jquery.bxSlider.min.js" type="text/javascript"></script>
     <script src="stylesheets/javascript/getTweet.js" type="text/javascript"></script>
     <script src="stylesheets/javascript/jquery.fancybox.js?v=2.1.3" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 
     <!--******* Javascript Code for the Main banner *******-->
     <script type="text/javascript">
@@ -416,19 +405,19 @@ $num_rows1 = pg_num_rows($result1);
             });
 
         });
-
-        function CopyToken() {
-            console.log("Função Startada");
-            var copyText = document.getElementById("tokenHidden");
-            var textArea = document.createElement("textarea");
-            textArea.value = copyText.textContent;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("Copy");
-            textArea.remove();
-        }
-        }
-    </script>
+   
+	function CopyToken(){
+		console.log("Função Startada");
+    var copyText = document.getElementById("tokenHidden");
+    var textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+}
+	}
+	</script>
 </body>
 
 </html>
