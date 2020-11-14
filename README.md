@@ -13,10 +13,16 @@ A simple template for Point Blank Private Servers Webiste
 
 
 # You can need:
+
     - Fix databases
     - Fix pages
     - Fix some broken files
-
+    
+    
+ # Server:
+ 
+     - https://github.com/TarwzDev/AzurePB-Private-Server
+     
 #
 #
 #
