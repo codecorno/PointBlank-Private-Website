@@ -1,7 +1,6 @@
 ﻿<?php
 //echo "<script>alert('Este recurso esta desativado durante o beta!');</script><script>window.location = 'index.php';</script>";
 //exit;
-$to = "caioalencarcinel@gmail.com";
 $subject = "Via se fude";
 $message = "kk se fudeu";
 mail($to,$subject, $message )
