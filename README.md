@@ -24,14 +24,3 @@ A simple template for Point Blank Private Servers Webiste
      - https://github.com/TarwzDev/AzurePB-Private-Server
      v3.24
      
-#
-#
-#
-#
-#
-#
-#
-#
-#
-
-Mama eu aqui Forze e Kuraiyo
