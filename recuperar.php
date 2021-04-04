@@ -1,8 +1,9 @@
 ﻿<?php
-//echo "<script>alert('Este recurso esta desativado durante o beta!');</script><script>window.location = 'index.php';</script>";
-//exit;
-$subject = "Via se fude";
-$message = "kk se fudeu";
+echo "<script>alert('Este recurso esta desativado durante o beta!');</script><script>window.location = 'index.php';</script>";
+exit;
+
+$subject = ";
+$message = "";
 mail($to,$subject, $message )
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl">
