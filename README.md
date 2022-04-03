@@ -2,7 +2,7 @@
 
 
 
-A simple template for Point Blank Private Servers Webiste
+A simple template for Point Blank Private Servers Website
 
 # Features!
 
